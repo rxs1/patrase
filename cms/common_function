@@ -1,0 +1,23 @@
+<?php
+	function getCategoryNameById($id){
+		 $query = "SELECT * FROM mst_category where id=$id";
+         $result = @mysql_query($query);
+         $row = mysql_fetch_array($result, MYSQL_ASSOC);
+         return $row['name'];       
+	}
+
+	function getRegionNameById($id){
+		 $query = "SELECT * FROM mst_region where id=$id";
+         $result = @mysql_query($query);
+         $row = mysql_fetch_array($result, MYSQL_ASSOC);
+         return $row['name'];       
+	}
+
+	function getRowCategoryById($id){
+		 $query = "SELECT * from mst_category where id=$id";
+         $result = @mysql_query($query);
+         $row = mysql_fetch_array($result);
+         return $row;
+	}
+
+?>

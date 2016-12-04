@@ -107,7 +107,7 @@
 			"file": "cms/login.php",
 			"settings":
 			{
-				"buffer_size": 3609,
+				"buffer_size": 3608,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -120,12 +120,12 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 0.0,
+		"height": 392.0,
 		"last_filter": "",
 		"selected_items":
 		[
 		],
-		"width": 0.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -143,11 +143,6 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/opt/lampp/htdocs/patrase",
-		"/opt/lampp/htdocs/patrase/cms"
-	],
 	"file_history":
 	[
 		"/opt/lampp/htdocs/ingenicosms/administrator/dashboard.php",
@@ -212,15 +207,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3609,
+						"buffer_size": 3608,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								403,
-								403
+								2743,
+								2651
 							]
 						],
 						"settings":
@@ -298,7 +293,7 @@
 		[
 			[
 				"",
-				"/opt/lampp/htdocs/ingenicosms/ingenico.sublime-project"
+				"/opt/lampp/htdocs/patrase/cms/patrase.sublime-project"
 			]
 		],
 		"width": 380.0

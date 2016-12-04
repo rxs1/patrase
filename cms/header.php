@@ -1,5 +1,5 @@
 <?php
-    error_reporting(0);
+    error_reporting(1);
     session_start();
   if(isset($_SESSION['username'])){
     $username = $_SESSION['username'];
@@ -7,7 +7,8 @@
     header('Location: login.php');
     die();
   }
-
+  require_once('connect_database.php');
+  include('common_function');
 ?>
 
 <!-- Main Header -->

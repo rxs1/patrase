@@ -15,8 +15,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
@@ -78,69 +79,67 @@ desired effect
     <!-- Main content -->
     <section class="content">
 
-        <!-- Info boxes -->
-      <div class="row" style="margin-top:10%">
-	  <div class="col-md-12">
-        <div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-1">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion-ios-people-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Visitor</span>
-              <span class="info-box-number">2,000</span>
+      <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Data Pasar Tradisional</h3>
+              <hr>
+              <br>
+              <div class="btn-group">
+                  <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#myModal">TAMBAH DATA </a>
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                          <h4 class="modal-title" id="myModalLabel">TAMBAH DATA</h4>
+                        </div>
+                        <div class="modal-body">
+                          ...
+                        </div>
+                  
+                      </div>
+                    </div>
+                  </div>
+              </div>
             </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-1">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="ion ion-ios-cart-outline"></i></span>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <table id="example1" class="table table-bordered table-striped">
+                <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Category</th>
+                  <th>Region</th>
+                  <th>Action</th>
+                </tr>
+                </thead>
+                <tbody>
+                <?php
+                $query = "SELECT * FROM mst_pasar";
+                $result = @mysql_query($query);
+                while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
+                  ?>
+                  <tr>
+                  <td>$row['name']</td>
+                  <td><?=getCategoryNameById($row['id_category'])?></td>
+                  <td><?=getRegionNameById($row['id_region'])?></td>
+                  <td>
+                  <a href="#" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
+                  <a href="#" ><span class="button btn-sm btn-primary"> <i class="glyphicon glyphicon-eye-open"></i></span></a>
+                  <a href="#" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
+                  </td>
+                </tr>
 
-            <div class="info-box-content">
-              <span class="info-box-text">Pasar</span>
-              <span class="info-box-number">41,410</span>
+                  <?php
+                }
+                ?>
+              </table>
             </div>
-            <!-- /.info-box-content -->
+            <!-- /.box-body -->
           </div>
-          <!-- /.info-box -->
+          <!-- /.box -->
         </div>
-        <!-- /.col -->
-</div>
-<div class="col-md-12">
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-1">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-pin"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Category</span>
-              <span class="info-box-number">760</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-4 col-sm-6 col-xs-12 col-md-offset-1">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-earth"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Region</span>
-              <span class="info-box-number">2,000</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-	</div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
 
     </section>
     <!-- /.content -->
@@ -168,6 +167,9 @@ desired effect
 <script src="plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- DATATABLE -->
+<script src="plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="plugins/datatables/dataTables.bootstrap.min.js"></script>
 <!-- FastClick -->
 <script src="plugins/fastclick/fastclick.js"></script>
 <!-- AdminLTE App -->
@@ -181,10 +183,15 @@ desired effect
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/Chart.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard2.js"></script>
+
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script>
+  $(function () {
+    $("#example1").DataTable();
+   
+  });
+</script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
      user experience. Slimscroll is required when using the

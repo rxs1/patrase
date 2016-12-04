@@ -4,16 +4,56 @@
 		"selected_items":
 		[
 			[
+				"error",
+				"error_reporting"
+			],
+			[
+				"mys",
+				"mysql_query"
+			],
+			[
+				"r",
+				"row"
+			],
+			[
+				"icon",
+				"icon_category"
+			],
+			[
+				"I",
+				"IconNewName"
+			],
+			[
+				"da",
+				"dataDescription"
+			],
+			[
+				"e",
+				"extension"
+			],
+			[
+				"re",
+				"required\tAttr"
+			],
+			[
+				"btn",
+				"btn-danger"
+			],
+			[
+				"pu",
+				"pull-right"
+			],
+			[
+				"session",
+				"session_start"
+			],
+			[
 				"unse",
 				"unset"
 			],
 			[
 				"sess",
 				"session_start"
-			],
-			[
-				"error",
-				"error_message"
 			],
 			[
 				"_",
@@ -76,10 +116,6 @@
 				"content_arr"
 			],
 			[
-				"mys",
-				"mysql_query"
-			],
-			[
 				"q",
 				"query"
 			],
@@ -116,16 +152,34 @@
 			"file": "dashboard.php",
 			"settings":
 			{
-				"buffer_size": 6977,
+				"buffer_size": 7017,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "menubar.php",
+			"file": "management-pasar.php",
 			"settings":
 			{
-				"buffer_size": 735,
+				"buffer_size": 7694,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "crud-category.php",
+			"settings":
+			{
+				"buffer_size": 9338,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "add_category.php",
+			"settings":
+			{
+				"buffer_size": 2047,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -134,7 +188,34 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 1958,
+				"buffer_size": 2215,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "edit_category.php",
+			"settings":
+			{
+				"buffer_size": 9628,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "common_function",
+			"settings":
+			{
+				"buffer_size": 665,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "delete_category.php",
+			"settings":
+			{
+				"buffer_size": 699,
 				"encoding": "UTF-8",
 				"line_ending": "Unix"
 			}
@@ -173,14 +254,30 @@
 	"expanded_folders":
 	[
 		"/opt/lampp/htdocs/patrase",
-		"/opt/lampp/htdocs/patrase/cms"
+		"/opt/lampp/htdocs/patrase/cms",
+		"/opt/lampp/htdocs/patrase/cms/pages/UI",
+		"/opt/lampp/htdocs/patrase/cms/pages/forms",
+		"/opt/lampp/htdocs/patrase/cms/upload"
 	],
 	"file_history":
 	[
+		"/opt/lampp/htdocs/patrase/cms/header.php",
+		"/opt/lampp/htdocs/patrase/cms/add_category.php",
+		"/opt/lampp/htdocs/patrase/cms/index.php",
+		"/opt/lampp/htdocs/ingenicosms/administrator/import_joborder.php",
+		"/opt/lampp/htdocs/patrase/cms/common_function",
+		"/opt/lampp/htdocs/patrase/cms/connect_database.php",
+		"/opt/lampp/htdocs/patrase/cms/pages/UI/buttons.html",
+		"/opt/lampp/htdocs/patrase/cms/pages/forms/general.html",
+		"/opt/lampp/htdocs/patrase/cms/pages/forms/advanced.html",
+		"/opt/lampp/htdocs/patrase/cms/management-pasar.php",
+		"/opt/lampp/htdocs/patrase/cms/pages/tables/data.html",
+		"/opt/lampp/htdocs/patrase/cms/menubar.php",
+		"/opt/lampp/htdocs/patrase/cms/crud-category.php",
+		"/opt/lampp/htdocs/patrase/cms/crud-region.php",
 		"/opt/lampp/htdocs/patrase/cms/auth.php",
 		"/opt/lampp/htdocs/ingenicosms/administrator/dashboard.php",
 		"/opt/lampp/htdocs/ingenicosms/administrator/viewall_resolution.php",
-		"/opt/lampp/htdocs/ingenicosms/administrator/import_joborder.php",
 		"/opt/lampp/htdocs/ingenicosms/administrator/upload/joborder/joborder-23:59:38.csv",
 		"/opt/lampp/htdocs/ingenicosms/administrator/delete_resolution.php",
 		"/opt/lampp/htdocs/ingenicosms/administrator/upload/joborder/joborder-15:27:52.csv",
@@ -196,7 +293,7 @@
 	],
 	"find":
 	{
-		"height": 23.0
+		"height": 34.0
 	},
 	"find_in_files":
 	{
@@ -210,6 +307,17 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"exi",
+			"var_",
+			"mymo",
+			"JobOrder_File",
+			"subm",
+			"upload",
+			"sele",
+			"general elements",
+			"general el",
+			"genera elemen",
+			"example2",
 			"form_sample_3",
 			"form_sampe_3",
 			"function_f",
@@ -221,6 +329,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"icon"
 		],
 		"reverse": false,
 		"show_context": true,
@@ -231,7 +340,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -261,7 +370,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -270,15 +379,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6977,
+						"buffer_size": 7017,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2732,
-								2732
+								2691,
+								2691
 							]
 						],
 						"settings":
@@ -288,71 +397,217 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 801.0,
+						"translation.y": 1575.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "management-pasar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7694,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6433,
+								6433
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true,
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2460.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "crud-category.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9338,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6821,
+								6821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1170.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "add_category.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2047,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								27,
+								27
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "menubar.php",
+					"buffer": 5,
+					"file": "header.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 735,
+						"buffer_size": 2215,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								575,
-								575
+								187,
+								187
 							]
 						],
 						"settings":
 						{
-							"auto_name": "",
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "edit_category.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9628,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5684,
+								5684
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1609.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "header.php",
+					"buffer": 7,
+					"file": "common_function",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1958,
+						"buffer_size": 665,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1617,
-								1617
+								658,
+								658
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "delete_category.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 699,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								622,
+								622
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -397,7 +652,7 @@
 	"project": "patrase.sublime-project",
 	"replace":
 	{
-		"height": 42.0
+		"height": 62.0
 	},
 	"save_all_on_build": true,
 	"select_file":
