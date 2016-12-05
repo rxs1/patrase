@@ -27,4 +27,11 @@
          return $row;
 	}
 
+	function getImagePasarById($id){
+		 $query = "SELECT * from mst_pasar_img where id_pasar=$id";
+         $result = @mysql_query($query);
+         // $row = mysql_fetch_array($result);
+         return $result;
+	}
+
 ?>
