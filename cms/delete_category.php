@@ -13,7 +13,7 @@
 		unlink('upload/icon_category/'.$row['icon']);
 		$query = "DELETE From mst_category where id=$id";
 		$result = @mysql_query($query);
-		if($result){
+		if(!$result){
 			$_SESSION['err_message']='NOT DELETED !';
 			header('Location: crud-category.php');
 			die('no file or permission denied');
