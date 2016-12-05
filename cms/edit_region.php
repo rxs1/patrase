@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <!--
 This is a starter template page. Use this page to start your new project from
@@ -56,10 +59,38 @@ desired effect
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
 
-   <?php include('header.php');?>
-  <!-- Left side column. contains the logo and sidebar -->
+   <?php 
+
+   include('header.php');
+   require_once('connect_database.php');
+   session_start();
+   if(!empty($_POST)){
+      $name =$_POST['name'];
+      $id = $_POST['id'];
+      $row = getRowCategoryById($id);
+      $query = "UPDATE mst_region SET name='$name' WHERE id=$id;";
+      $result= @mysql_query($query);
+      if($result){
+        $_SESSION['succes_message'] = 'Success Edit Data Region id = '.$id ;
+        echo '
+          <script type="text/javascript">
+          location.href = "crud-region.php";
+          </script>
+        ';
+        die();
+      }else{
+
+        $_SESSION['err_message'] = 'Error Edit Data Region id = '.$id ;
+        header('Location: edit-region.php?id='.$id);
+        die();
+      }
+      
+   }
+
+
+   ?>
+    
   <?php 
-  
   $TabCrudRegion = 'active';
   include('menubar.php');?>
 
@@ -72,7 +103,7 @@ desired effect
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> CMS</a></li>
-        <li class="active">CRUD Region</li>
+        <li class="active">Edit Region</li>
       </ol>
     </section>
 
@@ -80,92 +111,38 @@ desired effect
     <section class="content">
         <div class="box">
             <div class="box-header">
-              <h3 class="box-title">Data Region</h3>
+              <h3 class="box-title">Edit Region</h3>
               <hr>
               <br>
-              <div class="btn-group">
-                  <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#myModal">TAMBAH DATA</a>
-                  <!-- Modal -->
-                  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header">
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                          <h4 class="modal-title" id="myModalLabel">ADD DATA</h4>
-                        </div>
-                        <div class="modal-body">
-                          <?php
-                            if( isset($_SESSION['err_message'])){
-                              echo "<p class='alert alert-danger'>".$_SESSION['err_message']."</p>";
-                              unset($_SESSION['err_message']);
-                            }
-
-                             
-                          ?>
-                          <form action="add_region.php"  method="POST" enctype="multipart/form-data">
-
-                            <div class="form-group">
-                              <label>Name</label>
-                              <input type="text" name="name" class="form-control" placeholder="ex: Jakarta Pusat" required>
-                            </div>
-
-                            <input type="submit" class="btn btn-danger" value="ADD">
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-              </div>
             </div>
-            <!-- /.box-header -->
             <div class="box-body">
-             <?php
-                if( isset($_SESSION['succes_message'])){
-                  echo "<p class='alert alert-success'>".$_SESSION['succes_message']."</p>";
-                  unset($_SESSION['succes_message']);
-                }
-
-                if( isset($_SESSION['err_message'])){
-                  echo "<p class='alert alert-error'>".$_SESSION['err_message']."</p>";
-                  unset($_SESSION['err_message']);
-                }
-              ?>
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>Id</th>
-                  <th>Name</th>
-                  <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-                $query = "SELECT * FROM mst_region";
-                $result = @mysql_query($query);
-                while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
-                  ?>
-                  <tr>
-                  <td><?=$row['id']?></td>
-                  <td><?=$row['name']?></td>
-                   
-                 
-                  <td>
-                  <a href="edit_region.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
-                  <a href="delete_region.php?id=<?=$row['id']?>" onClick="return confirm('Delete This Category?')"><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
-                  </td>
-                </tr>
-
-                  <?php
-                }
+                 <?php
+                  if( isset($_SESSION['err_message'])){
+                    echo "<p class='alert alert-danger'>".$_SESSION['err_message']."</p>";
+                    unset($_SESSION['err_message']);
+                  }
                 ?>
-              </table>
+                <?php
+                  if(!empty($_GET)){
+                     $id = $_GET['id'];
+                     $name = getRegionNameById($id);
+                     echo $row['name'];
+                  }else{
+                    header('Location: crud-region.php');
+                    die();
+                  }
+                ?>
+                <form action="edit_region.php"  method="POST" enctype="multipart/form-data">
+                  <div class="form-group">
+                              <label>Name</label>
+                    <input type="text" name="name" class="form-control" value="<?=$name?>" placeholder="ex: Jakarta Pusat" required>
+
+                  </div>
+          
+                  <input type="hidden" class="btn btn-warning" name="id" value="<?=$_GET['id']?>">
+                  <input type="submit" class="btn btn-warning" value="SAVE">
             </div>
-            <!-- /.box-body -->
-          </div>
-          <!-- /.box -->
         </div>
-
-
     </section>
     <!-- /.content -->
   </div>
@@ -207,31 +184,12 @@ desired effect
 <!-- SlimScroll 1.3.0 -->
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
-    <!-- DataTables -->
-<link rel="stylesheet" href="plugins/datatables/dataTables.bootstrap.css">
+
 <script src="plugins/chartjs/Chart.min.js"></script>
 <!-- Select2 -->
 
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-<script>
-  $(function () {
-    $("#example1").DataTable();
-      //Initialize Select2 Elements
- 
-    <?php
-    if(isset($_SESSION['modal'])){
-      if($_SESSION['modal']){
-        echo"
-        $('#myModal').modal('show');
-        ";
 
-        unset($_SESSION['modal']);
-      }
-    }
-    ?>
-
-  });
-</script>
 </body>
 </html>
