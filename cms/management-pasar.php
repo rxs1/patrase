@@ -95,7 +95,58 @@ desired effect
                           <h4 class="modal-title" id="myModalLabel">TAMBAH DATA</h4>
                         </div>
                         <div class="modal-body">
-                          ...
+                          <?php
+                            // if( isset($_SESSION['err_message'])){
+                            //   echo "<p class='alert alert-danger'>".$_SESSION['err_message']."</p>";
+                            //   unset($_SESSION['err_message']);
+                            // }
+
+                          ?>
+                          <form action="add_pasar.php"  method="POST" enctype="multipart/form-data">
+
+                            <div class="form-group">
+                              <label>Name</label>
+                              <input type="text" name="name" class="form-control" placeholder="ex: Pasar Minggu" required>
+                            </div>
+                            <div class="form-group">
+                              <label>Category</label>
+                               <select class="form-control" name="category" required>
+                              
+                                <?php
+                                  $query1 = "SELECT * FROM mst_category";
+                                  $result1 = @mysql_query($query1);
+                                  $i = 0;
+
+                                  while ($row1 = mysql_fetch_array($result1, MYSQL_ASSOC)) {
+                                      ?>
+
+                                    <option <?= $selected1 ?> value="<?= $row1['id'] ?>"><?= $row1['name'] ?></option>
+                                <?php } ?>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label>Region</label>
+                               <select class="form-control" name="region" required>
+                               
+                                <?php
+                                  $query1 = "SELECT * FROM mst_region";
+                                  $result1 = @mysql_query($query1);
+                                  $i = 0;
+
+                                  while ($row1 = mysql_fetch_array($result1, MYSQL_ASSOC)) {
+                                      ?>
+
+                                    <option <?= $selected1 ?> value="<?= $row1['id'] ?>"><?= $row1['name'] ?></option>
+                                <?php } ?>
+                              </select>
+                            </div>
+                            <div class="form-group">
+                              <label>Keterangan</label>
+                              <textarea style="height: 200px" class="form-control" placeholder="extra description" name="description"></textarea>
+                            </div>
+
+                            <input type="submit" class="btn btn-danger" value="ADD">
+                          </form>
                         </div>
                   
                       </div>
@@ -105,9 +156,21 @@ desired effect
             </div>
             <!-- /.box-header -->
             <div class="box-body">
+              <?php
+                if( isset($_SESSION['success_message'])){
+                  echo "<p class='alert alert-success'>".$_SESSION['success_message']."</p>";
+                  unset($_SESSION['success_message']);
+                }
+
+                if( isset($_SESSION['err_message'])){
+                  echo "<p class='alert alert-error'>".$_SESSION['err_message']."</p>";
+                  unset($_SESSION['err_message']);
+                }
+              ?>
               <table id="example1" class="table table-bordered table-striped">
                 <thead>
                 <tr>
+                  <th>Id</th>
                   <th>Name</th>
                   <th>Category</th>
                   <th>Region</th>
@@ -121,13 +184,15 @@ desired effect
                 while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
                   ?>
                   <tr>
-                  <td>$row['name']</td>
+                  <td><?=$row['id']?></td>
+                  <td><?=$row['name']?></td>
                   <td><?=getCategoryNameById($row['id_category'])?></td>
                   <td><?=getRegionNameById($row['id_region'])?></td>
                   <td>
-                  <a href="#" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
-                  <a href="#" ><span class="button btn-sm btn-primary"> <i class="glyphicon glyphicon-eye-open"></i></span></a>
-                  <a href="#" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
+                  <a href="edit_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
+                  <a href="edit_image.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-picture"></i></span></a>
+                  <a href="view_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-primary"> <i class="glyphicon glyphicon-eye-open"></i></span></a>
+                  <a href="delete_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
                   </td>
                 </tr>
 
