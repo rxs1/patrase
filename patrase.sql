@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: 04 Des 2016 pada 18.32
--- Versi Server: 10.1.19-MariaDB
+-- Host: 127.0.0.1
+-- Generation Time: Dec 05, 2016 at 04:19 AM
+-- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_category`
+-- Table structure for table `mst_category`
 --
 
 CREATE TABLE `mst_category` (
@@ -33,16 +33,16 @@ CREATE TABLE `mst_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mst_category`
+-- Dumping data for table `mst_category`
 --
 
 INSERT INTO `mst_category` (`id`, `name`, `icon`) VALUES
-(20, 'asdasdsadssadsa', 'icon-00:30:26.png');
+(1, 'test', 'kk');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_location`
+-- Table structure for table `mst_location`
 --
 
 CREATE TABLE `mst_location` (
@@ -54,7 +54,7 @@ CREATE TABLE `mst_location` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_pasar`
+-- Table structure for table `mst_pasar`
 --
 
 CREATE TABLE `mst_pasar` (
@@ -76,13 +76,25 @@ CREATE TABLE `mst_pasar` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_region`
+-- Table structure for table `mst_region`
 --
 
 CREATE TABLE `mst_region` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mst_region`
+--
+
+INSERT INTO `mst_region` (`id`, `name`) VALUES
+(8, 'hkh'),
+(9, 'uuuu'),
+(10, 'k;'),
+(11, 'nks'),
+(12, 'hkh'),
+(13, 'kkk');
 
 --
 -- Indexes for dumped tables
@@ -127,6 +139,11 @@ ALTER TABLE `mst_category`
 --
 ALTER TABLE `mst_pasar`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `mst_region`
+--
+ALTER TABLE `mst_region`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
