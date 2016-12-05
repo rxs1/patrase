@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2016 at 04:19 AM
+-- Generation Time: Dec 05, 2016 at 04:49 AM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -37,7 +37,7 @@ CREATE TABLE `mst_category` (
 --
 
 INSERT INTO `mst_category` (`id`, `name`, `icon`) VALUES
-(1, 'test', 'kk');
+(1, 'test', 'icon-00-30-26.png');
 
 -- --------------------------------------------------------
 
@@ -89,7 +89,7 @@ CREATE TABLE `mst_region` (
 --
 
 INSERT INTO `mst_region` (`id`, `name`) VALUES
-(8, 'hkh'),
+(8, 'testing'),
 (9, 'uuuu'),
 (10, 'k;'),
 (11, 'nks'),
