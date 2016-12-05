@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.2
+-- version 4.5.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: 04 Des 2016 pada 18.32
--- Versi Server: 10.1.19-MariaDB
+-- Host: 127.0.0.1
+-- Generation Time: Dec 05, 2016 at 10:04 AM
+-- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_category`
+-- Table structure for table `mst_category`
 --
 
 CREATE TABLE `mst_category` (
@@ -33,16 +33,16 @@ CREATE TABLE `mst_category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data untuk tabel `mst_category`
+-- Dumping data for table `mst_category`
 --
 
 INSERT INTO `mst_category` (`id`, `name`, `icon`) VALUES
-(20, 'asdasdsadssadsa', 'icon-00:30:26.png');
+(21, 'Barang Antik', 'antique-icon.png');
 
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_location`
+-- Table structure for table `mst_location`
 --
 
 CREATE TABLE `mst_location` (
@@ -54,7 +54,7 @@ CREATE TABLE `mst_location` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_pasar`
+-- Table structure for table `mst_pasar`
 --
 
 CREATE TABLE `mst_pasar` (
@@ -66,23 +66,60 @@ CREATE TABLE `mst_pasar` (
   `keterangan` text NOT NULL,
   `time_open` time NOT NULL,
   `time_close` time NOT NULL,
-  `active_day` int(11) NOT NULL,
+  `active_day` tinyint(1) NOT NULL,
   `address` int(11) NOT NULL,
   `create_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_date` datetime NOT NULL,
   `img` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `mst_pasar`
+--
+
+INSERT INTO `mst_pasar` (`id`, `name`, `id_category`, `id_region`, `id_location`, `keterangan`, `time_open`, `time_close`, `active_day`, `address`, `create_date`, `update_date`, `img`) VALUES
+(1, 'Pasar Minggu', 21, 15, 0, '', '00:00:00', '00:00:00', 0, 0, '2016-12-05 05:52:02', '0000-00-00 00:00:00', '');
+
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `mst_region`
+-- Table structure for table `mst_pasar_img`
+--
+
+CREATE TABLE `mst_pasar_img` (
+  `id` int(11) NOT NULL,
+  `id_pasar` int(11) NOT NULL,
+  `img` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mst_pasar_img`
+--
+
+INSERT INTO `mst_pasar_img` (`id`, `id_pasar`, `img`) VALUES
+(1, 1, 'pasar_baru_2.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `mst_region`
 --
 
 CREATE TABLE `mst_region` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `mst_region`
+--
+
+INSERT INTO `mst_region` (`id`, `name`) VALUES
+(15, 'Jakarta Pusat'),
+(16, 'Jakarta Selatan'),
+(17, 'Jakarta Timur'),
+(18, 'Jakarta Barat'),
+(19, 'Jakarta Utara');
 
 --
 -- Indexes for dumped tables
@@ -108,6 +145,12 @@ ALTER TABLE `mst_pasar`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `mst_pasar_img`
+--
+ALTER TABLE `mst_pasar_img`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `mst_region`
 --
 ALTER TABLE `mst_region`
@@ -121,12 +164,22 @@ ALTER TABLE `mst_region`
 -- AUTO_INCREMENT for table `mst_category`
 --
 ALTER TABLE `mst_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `mst_pasar`
 --
 ALTER TABLE `mst_pasar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+--
+-- AUTO_INCREMENT for table `mst_pasar_img`
+--
+ALTER TABLE `mst_pasar_img`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT for table `mst_region`
+--
+ALTER TABLE `mst_region`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
