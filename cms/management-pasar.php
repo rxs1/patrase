@@ -21,6 +21,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+   <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="../../plugins/timepicker/bootstrap-timepicker.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
@@ -140,6 +142,32 @@ desired effect
                                 <?php } ?>
                               </select>
                             </div>
+                            <div class="bootstrap-timepicker">
+                            <div class="form-group">
+                              <label>Waktu Buka :</label>
+
+                              <div class="input-group">
+                                <input type="text" class="form-control timepicker" name="open">
+
+                                <div class="input-group-addon">
+                                  <i class="fa fa-clock-o"></i>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="bootstrap-timepicker">
+                            <div class="form-group">
+                              <label>Waktu Tutup :</label>
+
+                              <div class="input-group">
+                                <input type="text" class="form-control timepicker" name="closed">
+
+                                <div class="input-group-addon">
+                                  <i class="fa fa-clock-o"></i>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
                             <div class="form-group">
                               <label>Keterangan</label>
                               <textarea style="height: 200px" class="form-control" placeholder="extra description" name="description"></textarea>
@@ -192,7 +220,7 @@ desired effect
                   <a href="edit_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
                   <a href="edit_image.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-picture"></i></span></a>
                   <a href="view_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-primary"> <i class="glyphicon glyphicon-eye-open"></i></span></a>
-                  <a href="delete_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
+                  <a href="delete_pasar.php?id=<?=$row['id']?>" onClick="return confirm('Delete This Category?')"><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
                   </td>
                 </tr>
 
@@ -248,14 +276,22 @@ desired effect
 <script src="plugins/slimScroll/jquery.slimscroll.min.js"></script>
 <!-- ChartJS 1.0.1 -->
 <script src="plugins/chartjs/Chart.min.js"></script>
-
+<!-- bootstrap time picker -->
+<script src="../../plugins/timepicker/bootstrap-timepicker.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+
 <script>
   $(function () {
     $("#example1").DataTable();
    
   });
+  //Timepicker
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
 </script>
 <!-- Optionally, you can add Slimscroll and FastClick plugins.
      Both of these plugins are recommended to enhance the
