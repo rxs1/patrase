@@ -220,7 +220,9 @@ desired effect
                   <a href="edit_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
                   <a href="edit_image.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-picture"></i></span></a>
                   <a href="view_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-primary"> <i class="glyphicon glyphicon-eye-open"></i></span></a>
-                  <a href="delete_pasar.php?id=<?=$row['id']?>" onClick="return confirm('Delete This Category?')"><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
+
+                  <a href="marker-pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-success"> <i class="glyphicon glyphicon-map-marker"></i></span></a>
+                  <a href="delete_pasar.php?id=<?=$row['id']?>" onClick="return confirm('Delete This Data?')"><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
                   </td>
                 </tr>
 
