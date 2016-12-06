@@ -161,18 +161,18 @@
 			"file": "management-pasar.php",
 			"settings":
 			{
-				"buffer_size": 7694,
+				"buffer_size": 12912,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "crud-category.php",
 			"settings":
 			{
-				"buffer_size": 9338,
+				"buffer_size": 9373,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
@@ -188,36 +188,36 @@
 			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 2215,
+				"buffer_size": 2217,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "edit_category.php",
 			"settings":
 			{
-				"buffer_size": 9628,
+				"buffer_size": 9901,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "common_function",
 			"settings":
 			{
-				"buffer_size": 665,
+				"buffer_size": 1073,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "delete_category.php",
 			"settings":
 			{
-				"buffer_size": 699,
+				"buffer_size": 700,
 				"encoding": "UTF-8",
-				"line_ending": "Unix"
+				"line_ending": "Windows"
 			}
 		}
 	],
@@ -253,11 +253,6 @@
 	},
 	"expanded_folders":
 	[
-		"/opt/lampp/htdocs/patrase",
-		"/opt/lampp/htdocs/patrase/cms",
-		"/opt/lampp/htdocs/patrase/cms/pages/UI",
-		"/opt/lampp/htdocs/patrase/cms/pages/forms",
-		"/opt/lampp/htdocs/patrase/cms/upload"
 	],
 	"file_history":
 	[
@@ -409,15 +404,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7694,
+						"buffer_size": 12912,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6433,
-								6433
+								0,
+								0
 							]
 						],
 						"settings":
@@ -440,15 +435,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9338,
+						"buffer_size": 9373,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6821,
-								6821
+								0,
+								0
 							]
 						],
 						"settings":
@@ -499,15 +494,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2215,
+						"buffer_size": 2217,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								187,
-								187
+								0,
+								0
 							]
 						],
 						"settings":
@@ -529,15 +524,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9628,
+						"buffer_size": 9901,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5684,
-								5684
+								0,
+								0
 							]
 						],
 						"settings":
@@ -547,7 +542,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1609.0,
+						"translation.y": 1297.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -559,15 +554,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 665,
+						"buffer_size": 1073,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								658,
-								658
+								0,
+								0
 							]
 						],
 						"settings":
@@ -587,15 +582,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 699,
+						"buffer_size": 700,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								622,
-								622
+								0,
+								0
 							]
 						],
 						"settings":
