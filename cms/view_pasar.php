@@ -131,11 +131,74 @@ desired effect
             <div class="box-body">
             <div class="row">
               <div class="col-md-6">
-              <div class="box">
-            <!-- /.box-header -->
-            <div class="box-body ">
+          
+            <div class="box box-solid">
+            <div class="box-header">
             </div>
+            <div class="box-body">
+              <?php
+                if( isset($_SESSION['err_message'])){
+                    echo "<p class='alert alert-danger'>".$_SESSION['err_message']."</p>";
+                    unset($_SESSION['err_message']);
+                  }
+                  if(!empty($_GET)){
+                     $id = $_GET['id'];
+                     $row = getRowPasarById($id);
+                  }else{
+                    header('Location: management-pasar.php');
+                    die();
+                  }
+              ?>
+              <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+              <?php
+                $result = getImagePasarById($id);
+                $i = 0;
+                while ($row1 = mysql_fetch_array($result, MYSQL_ASSOC)) {
+                    $i++;
+                    $active = "";
+                    if ($i == 1){
+                      $active ="active";
+                    }
+                    
+                    ?>
+                  <li data-target="#carousel-example-generic" data-slide-to="<?= $i ?>" class="<?= $active ?>">"></li>
+              <?php } ?>
+                </ol>
+                <div class="carousel-inner">
+                   <?php
+                    $result = getImagePasarById($id);
+                    $i = 0;
+                    while ($row1 = mysql_fetch_array($result, MYSQL_ASSOC)) {
+                        $i++;
+                        $active = "item ";
+                        if ($i == 1){
+                          $active ="item active";
+                        }
+                        
+                        ?>
+                      <div class="<?= $active ?>">
+                        <img src="upload/img_pasar/<?=$row1['img']?>" alt="">
+
+                        <div class="carousel-caption">
+                          
+                        </div>
+                      </div>
+                      
+                  <?php } ?>
+                </div>
+                <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+                  <span class="fa fa-angle-left"></span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+                  <span class="fa fa-angle-right"></span>
+                </a>
+              </div>
             </div>
+            <!-- /.box-body -->
+          </div>
+          <!-- /.box -->
+            
               </div>
               <div class="col-md-6">
               <div class="box ">
@@ -188,6 +251,8 @@ desired effect
           </div>
           <!-- /.box -->
           <hr>
+
+                 
             <h4 style="text-align:center"><i class="icon fa fa-camera"></i>   Lihat Gambar Pasar</h4>
             <hr>
             <?php                    
