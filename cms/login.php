@@ -3,7 +3,7 @@ session_start();
 
 if(!empty($_POST)){
   if($_POST['username'] == 'admin'){
-      if(md5($_POST['password']) == 'c4ca4238a0b923820dcc509a6f75849b'){
+      if(md5($_POST['password']) == '21232f297a57a5a743894a0e4a801fc3'){
           $_SESSION['username'] = $_POST['username']; 
           header('Location: dashboard.php');
           die();
