@@ -220,7 +220,7 @@ desired effect
                   <div class="form-group">
                               <label>Alamat</label>
                               
-                              <textarea style="height: 100px" class="form-control" placeholder="address" name="address"><?=$row['address']?></textarea>
+                              <textarea style="height: 100px" class="form-control" placeholder="address" required name="address"><?=$row['address']?></textarea>
                             </div>
                   <div class="form-group">
                     <label>Keterangan</label>
