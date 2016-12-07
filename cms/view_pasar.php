@@ -274,30 +274,31 @@ desired effect
           </div>
           <!-- /.box -->
           <hr>
-
-                 
-            <h4 style="text-align:center"><i class="icon fa fa-camera"></i>   Lihat Gambar Pasar</h4>
+            <h4 style="text-align:center"><i class="glyphicon glyphicon-map-marker"></i>   Lokasi</h4>
             <hr>
-            <?php                    
-              $query = "SELECT * from mst_pasar_img where id_pasar=$id";
-              $result = @mysql_query($query);
-              if ($result) {
-                  while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-                      ?> 
-                      <div class="col-sm-6 col-md-4">
-                          <div class="thumbnail">
-                              <img height="300"  src="upload/img_pasar/<?=$row['img']?>">
-                          </div>
-                      </div>
-
-                      <?php
-                  }
-              } else {
-                echo '<h3>Still Dont Have Photo.</h3>';
-              }
+            <?php
+            $query = "SELECT * FROM mst_location where id=$id";
+            $result = @mysql_query($query);
+            $row = mysql_fetch_array($result, MYSQL_ASSOC);
+            if(empty($row)){
+                          echo "<p class='alert alert-warning'>You Still not Define Marker for This 'Pasar'</p>";
+                        }else{
+          ?>
             
-              ?>
-            </div>
+            <div style="height: 350px;width: 100%"  id="map" ></div>
+            <form method="POST" action="marker-maps-process.php" >
+                <br>
+                <br>
+                <input  name="lat" id="lat" value="<?= $row['lat'] ?>" type="hidden">
+                <input name="lng" id="lng" value="<?= $row['lng'] ?>" type="hidden" >
+                <input name="id" value="<?= $id ?>" type="hidden">
+                
+
+            </form>    
+            <?php } ?>
+
+
+            
   
         </div>
     </section>
@@ -347,6 +348,56 @@ desired effect
 
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOKT6UeawkNsGVZVjOWLczHtcDYfZTyBE&callback=initMap&libraries=places" async defer
+></script>
 
+<!-- END PAGE LEVEL SCRIPTS -->
+<script type="text/javascript">
+    /* global google */
+
+    var map;
+    var marker;
+    var myLatLng;
+   
+    if (document.getElementById('lat').value != '' && document.getElementById('lng').value != '') {
+        var lat = parseFloat(document.getElementById('lat').value);
+        var lng = parseFloat(document.getElementById('lng').value);
+        myLatLng = {lat: lat, lng: lng};
+    } else {
+        myLatLng = {lat: -6.22171915637258, lng: 106.85611756132812};
+
+    }
+
+    function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+            center: myLatLng,
+            zoom: 18,
+            draggable: false,
+            geodesic: false,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+        });
+        
+        addMarker(myLatLng, map);
+
+    }
+
+    function addMarker(location, map) {
+        // Add the marker at the clicked location, and add the next-available label
+        // from the array of alphabetical characters.
+         marker = new google.maps.Marker({
+            position: location,
+            label: '',
+            map: map,
+            draggable: false
+        });
+   }
+
+    function updateMarkerPosition(latLng) {
+      document.getElementById('lat').value = [latLng.lat()];
+      document.getElementById('lng').value = [latLng.lng()];
+    }
+            
+
+</script>
 </body>
 </html>

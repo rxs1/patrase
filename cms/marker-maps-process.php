@@ -21,7 +21,7 @@
             	die();
             }else{
            		$_SESSION['err_message'] = 'Marker Not Working';
-            	header('Location: marker-pasar.php?idmaps='.$id);
+            	header('Location: marker-pasar.php?id='.$id);
             	die();
             }
 		}else{
@@ -30,7 +30,7 @@
             
             if($result){
             	$_SESSION['success_message'] = 'Marker Was Added !';
-            	header('Location: marker-pasar.php?idmaps='.$id);
+            	header('Location: marker-pasar.php?id='.$id);
             	die();
             }else{
             	$_SESSION['err_message'] = 'Marker Not Working';
