@@ -152,9 +152,11 @@ desired effect
                         $query = "SELECT * FROM mst_location where id=$id";
                         $result = @mysql_query($query);
                         $row = mysql_fetch_array($result, MYSQL_ASSOC);
-                        if(!$result){
+
+                        if(empty($row)){
                           echo "<p class='alert alert-warning'>You Still not Define Marker for This 'Pasar'</p>";
                         }
+
                       ?>
                       <div class="map"></div>
                         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
