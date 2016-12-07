@@ -282,6 +282,9 @@ desired effect
             $row = mysql_fetch_array($result, MYSQL_ASSOC);
             if(empty($row)){
                           echo "<p class='alert alert-warning'>You Still not Define Marker for This 'Pasar'</p>";
+                          echo "<center><a style ='font-size:15px;text-align:center' class='button btn-sm btn-success' href='marker-pasar.php?id=".$id." ''><span> <i class='glyphicon glyphicon-map-marker'></i></span> Please Set Maps Here</a></center>
+                          <br><br>
+                          ";
                         }else{
           ?>
             
