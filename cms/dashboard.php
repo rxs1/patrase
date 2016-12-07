@@ -81,7 +81,18 @@ desired effect
 
     <!-- Main content -->
     <section class="content">
+      <?php
+         $query = "SELECT count(*) from mst_pasar";
+         $result = @mysql_query($query);
+         $pasar= mysql_fetch_array($result)[0];
+         $query = "SELECT count(*) from mst_category";
+         $result = @mysql_query($query);
+         $category= mysql_fetch_array($result)[0];
+         $query = "SELECT count(*) from mst_region";
+         $result = @mysql_query($query);
+         $region= mysql_fetch_array($result)[0];
 
+      ?>
         <!-- Info boxes -->
       <div class="row" style="margin-top:10%">
 	  <div class="col-md-12">
@@ -104,7 +115,7 @@ desired effect
 
             <div class="info-box-content">
               <span class="info-box-text">Pasar</span>
-              <span class="info-box-number">41,410</span>
+              <span class="info-box-number"><?=$pasar?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -122,7 +133,7 @@ desired effect
 
             <div class="info-box-content">
               <span class="info-box-text">Category</span>
-              <span class="info-box-number">760</span>
+              <span class="info-box-number"><?=$category?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -135,7 +146,7 @@ desired effect
 
             <div class="info-box-content">
               <span class="info-box-text">Region</span>
-              <span class="info-box-number">2,000</span>
+              <span class="info-box-number"><?=$region?></span>
             </div>
             <!-- /.info-box-content -->
           </div>

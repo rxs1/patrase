@@ -20,6 +20,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <!-- Theme style -->
   <link rel="stylesheet" href="plugins/jvectormap/jquery-jvectormap-1.2.2.css">
   <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="plugins/timepicker/bootstrap-timepicker.min.css">
   <!-- AdminLTE Skins. We have chosen the skin-blue for this starter
         page. However, you can choose any other skin. Make sure you
         apply the skin class to the body tag so the changes take effect.
@@ -65,10 +67,18 @@ desired effect
       $name = $_POST['name'];
       $category = $_POST['category'];
       $region = $_POST['region'];
+      $waktu_buka = date("H:i:s", strtotime($_POST['open']));
+      $waktu_tutup = date("H:i:s", strtotime($_POST['closed']));
       $keterangan = $_POST['description'];
+      $address = $_POST['address'];
       $id = $_POST['id'];
       $row = getRowPasarById($id);
-      $query = "UPDATE mst_pasar SET name='$name', id_category='$category', id_region='$region', keterangan='$keterangan' WHERE id=$id;";
+      if ($waktu_buka > $waktu_tutup){
+          $_SESSION['err_message'] = 'Error Edit Data Pasar id = '.$id.' : Waktu salah' ;
+          // header('Location: edit_pasar.php?id='.$id);
+          // die();
+      } else {
+         $query = "UPDATE mst_pasar SET name='$name', id_category='$category', id_region='$region', time_open='$waktu_buka', time_close='$waktu_tutup', keterangan='$keterangan', address='$address' WHERE id=$id;";
       $result= @mysql_query($query);
       if($result){
         $_SESSION['success_message'] = 'Success Edit Data Pasar id = '.$id ;
@@ -81,9 +91,11 @@ desired effect
       }else{
 
         $_SESSION['err_message'] = 'Error Edit Data Pasar id = '.$id ;
-        header('Location: edit-pasar.php?id='.$id);
+        header('Location: edit_pasar.php?id='.$id);
         die();
       }
+      }
+     
       
    }
 
@@ -113,7 +125,6 @@ desired effect
             <div class="box-header">
               <h3 class="box-title">Edit Pasar</h3>
               <hr>
-              <br>
             </div>
             <div class="box-body">
                  <?php
@@ -129,7 +140,7 @@ desired effect
                     die();
                   }
                 ?>
-                <form action="edit_pasar.php"  method="POST" enctype="multipart/form-data">
+                <form action="edit_pasar.php?id=<?=$id?>"  method="POST" enctype="multipart/form-data">
                   <div class="form-group">
                               <label>Name</label>
                     <input type="text" name="name" class="form-control" value="<?=$row['name']?>" placeholder="ex: Jakarta Pusat" required>
@@ -174,9 +185,46 @@ desired effect
                       <?php } ?>
                     </select>
                   </div>
+                                <div class="bootstrap-timepicker">
+                            <div class="form-group">
+                              <label>Open Time :</label>
+
+                              <div class="input-group">
+                              <?php
+                                $waktu_buka = date("g:i a", strtotime($row['time_open']));
+                              ?>
+                                <input type="text" class="form-control timepicker" name="open" value="<?=$waktu_buka?>">
+
+                                <div class="input-group-addon">
+                                  <i class="fa fa-clock-o"></i>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                            <div class="bootstrap-timepicker">
+                            <div class="form-group">
+                              <label>Close Time :</label>
+
+                              <div class="input-group">
+                              <?php
+                                $waktu_tutup = date("g:i a", strtotime($row['time_close']));
+                              ?>
+                                <input type="text" class="form-control timepicker" name="closed" value="<?=$waktu_tutup?>">
+
+                                <div class="input-group-addon">
+                                  <i class="fa fa-clock-o"></i>
+                            </div>
+                            </div>
+                            </div>
+                            </div>
+                  <div class="form-group">
+                              <label>Alamat</label>
+                              
+                              <textarea style="height: 100px" class="form-control" placeholder="address" required name="address"><?=$row['address']?></textarea>
+                            </div>
                   <div class="form-group">
                     <label>Keterangan</label>
-                    <textarea style="height: 200px" class="form-control" placeholder="extra description" name="description"></textarea>
+                    <textarea style="height: 200px" class="form-control"  placeholder="extra description" name="description"><?=$row['keterangan']?></textarea>
                   </div>
 
                   <input type="hidden" class="btn btn-warning" name="id" value="<?=$_GET['id']?>">
@@ -227,9 +275,21 @@ desired effect
 
 <script src="plugins/chartjs/Chart.min.js"></script>
 <!-- Select2 -->
-
+<!-- bootstrap time picker -->
+<script src="plugins/timepicker/bootstrap-timepicker.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
-
+<script>
+  $(function () {
+    $("#example1").DataTable();
+   
+  });
+  //Timepicker
+    $(".timepicker").timepicker({
+      showInputs: false
+    });
+    //Date range picker with time picker
+    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
+</script>
 </body>
 </html>

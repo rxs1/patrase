@@ -7,11 +7,12 @@
 		$category = $_POST['category'];
 		$region = $_POST['region'];
 		$keterangan = $_POST['description'];
+		$address = $_POST['address'];
 		date_default_timezone_set("Asia/Jakarta");
 		//Upload First File
 		$dataDescription = array();
 
-		$query = "INSERT INTO mst_pasar (name, id_category, id_region, keterangan) VALUES ('$name', '$category', '$region', '$keterangan');";
+		$query = "INSERT INTO mst_pasar (name, id_category, id_region, keterangan, address) VALUES ('$name', '$category', '$region', '$keterangan', '$address');";
     	$result = @mysql_query($query);
     	
     	if($result){
