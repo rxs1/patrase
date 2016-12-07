@@ -168,13 +168,33 @@ desired effect
                 <div class="carousel-inner">
                    <?php
                     $result = getImagePasarById($id);
+                    $row1 = mysql_fetch_array($result, MYSQL_ASSOC);
+                    if(empty($row1)){
+                      ?>
+                      <div class="item active">
+                        <img src="upload/noimage2.png" alt="">
+
+                        <div class="carousel-caption">
+                          
+                        </div>
+                      </div>
+                    <?php } else {
+                      ?>
+                      <div class="item active">
+                        <img src="upload/img_pasar/<?=$row1['img']?>" alt="">
+
+                        <div class="carousel-caption">
+                          
+                        </div>
+                      </div>
+                    <?php }
+                  ?>
+                   <?php
                     $i = 0;
                     while ($row1 = mysql_fetch_array($result, MYSQL_ASSOC)) {
                         $i++;
-                        $active = "item ";
-                        if ($i == 1){
-                          $active ="item active";
-                        }
+                        $active = "item";
+                        
                         
                         ?>
                       <div class="<?= $active ?>">
@@ -186,6 +206,7 @@ desired effect
                       </div>
                       
                   <?php } ?>
+                 
                 </div>
                 <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                   <span class="fa fa-angle-left"></span>
@@ -233,16 +254,18 @@ desired effect
                   <td> : <?=$row['address']?></td>
                 </tr>
 
+            
                 
-                  <?php
+              </table>
+              <?php
                     $keterangan = $row['keterangan'];
                     if(empty($keterangan)){
                       $keterangan ="";
-                    }
+                    } else {
+                      ?>
+                      <b>Deskripsi :</b> <br>
+                    <?php }
                   ?>
-                
-              </table>
-              <b>Deskripsi :</b> <br>
               <i><?=$keterangan?></i>
               </div>
               </div>
