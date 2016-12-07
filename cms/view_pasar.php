@@ -138,7 +138,7 @@ desired effect
             </div>
               </div>
               <div class="col-md-6">
-              <div class="box">
+              <div class="box ">
             <div class="box-header">
               <h3 class="box-title"><b><?=$row['name']?></b></h3>
             </div>
@@ -147,42 +147,40 @@ desired effect
               
               <table class="table table-striped">
                 <tr>
-                  <td>Category : </td>
-                  <td><?= getCategoryNameById($row['id_category'])?></td>
+                  <td>Category</td>
+                  <td> : <?= getCategoryNameById($row['id_category'])?></td>
                   
                 </tr>
                 <tr>
-                  <td>Region : </td>
-                  <td><?= getRegionNameById($row['id_region'])?></td>
+                  <td>Region</td>
+                  <td> : <?= getRegionNameById($row['id_region'])?></td>
                   
                 </tr>
                 <tr>
-                  <td>Waktu Operasional : </td>
+                  <td>Waktu Operasional</td>
                   <?php
                    $waktu_buka = date("g:i a", strtotime($row['time_open']));
                    $waktu_tutup = date("g:i a", strtotime($row['time_close']));
                   ?>
-                  <td><?=$waktu_buka?> - <?=$waktu_tutup?></td>
+                  <td> : <?=$waktu_buka?> - <?=$waktu_tutup?></td>
                   
                 </tr>
                 <tr>
-                  <td>Alamat : </td>
-                  <td><?=$row['address']?></td>
+                  <td>Alamat</td>
+                  <td> : <?=$row['address']?></td>
                 </tr>
-                <tr>
-                  <td>Keterangan : </td>
-                  
-                </tr>
-                <tr>
+
+                
                   <?php
                     $keterangan = $row['keterangan'];
                     if(empty($keterangan)){
-                      $keterangan ="Tidak Tersedia";
+                      $keterangan ="";
                     }
                   ?>
-                  <td><i><?=$keterangan?></i></td>
-                </tr>
+                
               </table>
+              <b>Deskripsi :</b> <br>
+              <i><?=$keterangan?></i>
               </div>
               </div>
             </div>

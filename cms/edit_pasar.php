@@ -70,6 +70,7 @@ desired effect
       $waktu_buka = date("H:i:s", strtotime($_POST['open']));
       $waktu_tutup = date("H:i:s", strtotime($_POST['closed']));
       $keterangan = $_POST['description'];
+      $address = $_POST['address'];
       $id = $_POST['id'];
       $row = getRowPasarById($id);
       if ($waktu_buka > $waktu_tutup){
@@ -77,7 +78,7 @@ desired effect
           // header('Location: edit_pasar.php?id='.$id);
           // die();
       } else {
-         $query = "UPDATE mst_pasar SET name='$name', id_category='$category', id_region='$region', time_open='$waktu_buka', time_close='$waktu_tutup', keterangan='$keterangan' WHERE id=$id;";
+         $query = "UPDATE mst_pasar SET name='$name', id_category='$category', id_region='$region', time_open='$waktu_buka', time_close='$waktu_tutup', keterangan='$keterangan', address='$address' WHERE id=$id;";
       $result= @mysql_query($query);
       if($result){
         $_SESSION['success_message'] = 'Success Edit Data Pasar id = '.$id ;
@@ -217,8 +218,13 @@ desired effect
                             </div>
                             </div>
                   <div class="form-group">
+                              <label>Alamat</label>
+                              
+                              <textarea style="height: 100px" class="form-control" placeholder="address" name="address"><?=$row['address']?></textarea>
+                            </div>
+                  <div class="form-group">
                     <label>Keterangan</label>
-                    <textarea style="height: 200px" class="form-control" placeholder="extra description" name="description"></textarea>
+                    <textarea style="height: 200px" class="form-control"  placeholder="extra description" name="description"><?=$row['keterangan']?></textarea>
                   </div>
 
                   <input type="hidden" class="btn btn-warning" name="id" value="<?=$_GET['id']?>">

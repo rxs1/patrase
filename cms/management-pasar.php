@@ -169,6 +169,10 @@ desired effect
                             </div>
                             </div>
                             <div class="form-group">
+                              <label>Alamat</label>
+                              <textarea style="height: 100px" class="form-control" placeholder="address" name="address"></textarea>
+                            </div>
+                            <div class="form-group">
                               <label>Keterangan</label>
                               <textarea style="height: 200px" class="form-control" placeholder="extra description" name="description"></textarea>
                             </div>
