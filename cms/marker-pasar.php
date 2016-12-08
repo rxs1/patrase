@@ -158,7 +158,7 @@ desired effect
                         }
 
                       ?>
-                      <div class="map"></div>
+                     
                         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
                         <div style="height: 350px;width: 100%"  id="map" ></div>
                         <form method="POST" action="marker-maps-process.php" >
