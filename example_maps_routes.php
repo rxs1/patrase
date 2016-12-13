@@ -101,7 +101,7 @@
         <option value="kingman, az">Kingman</option>
         <option value="barstow, ca">Barstow</option>
         <option value="san bernardino, ca">San Bernardino</option>
-        <option value="los angeles, ca">Los Angeles</option>
+        <option value="-6.22171915637258, 106.85611756132812">Los Angeles</option>
       </select>
     </div>
     <div id="right-panel"></div>
@@ -126,7 +126,7 @@ function initMap() {
 
 
 	addMarker(myLatLng, map);
-    marker.addListener('drag', function () {
+    marker.addListener('dragend', function () {
             updateMarkerPosition(marker.getPosition());
     });
    

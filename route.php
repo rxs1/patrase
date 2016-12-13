@@ -14,6 +14,50 @@ Template 2075 Digital Team
 http://www.tooplate.com/view/2075-digital-team
 
 -->
+<style>
+        .controls {
+            margin-top: 10px;
+            border: 1px solid transparent;
+            border-radius: 2px 0 0 2px;
+            box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            height: 32px;
+            outline: none;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        #pac-input {
+            background-color: #fff;
+            font-family: Roboto;
+            font-size: 15px;
+            font-weight: 300;
+            margin-left: 12px;
+            padding: 0 11px 0 13px;
+            text-overflow: ellipsis;
+            width: 300px;
+        }
+
+        #pac-input:focus {
+            border-color: #4d90fe;
+        }
+
+        .pac-container {
+            font-family: Roboto;
+        }
+
+        #type-selector {
+            color: #fff;
+            background-color: #4d90fe;
+            padding: 5px 11px 0px 11px;
+        }
+
+        #type-selector label {
+            font-family: Roboto;
+            font-size: 13px;
+            font-weight: 300;
+        }
+
+    </style>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/font-awesome.min.css">
   <link rel="stylesheet" href="css/animate.min.css">
@@ -69,7 +113,7 @@ http://www.tooplate.com/view/2075-digital-team
     <div class="row">
       <div class="col-md-12 col-sm-12">
         <h3>From</h3>
-        <input type="text" id="from" style="width: 100%" class="form-control" placeholder="Please input beginning location ..." >
+        <input type="text" readonly="readonly" id="from" style="width: 100%" class="form-control" placeholder="Please input beginning location ..." >
 
         <h3>To Market ..</h3>
         <div class="col-md-4 col-sm-4">
@@ -89,6 +133,7 @@ http://www.tooplate.com/view/2075-digital-team
                                 <?php } ?>
             </select>
         </div>
+
         <div class="col-md-4 col-sm-4">
           <h5><i class="icon-grid small-icon"></i> Category</h5>
             <select name="category" class="form-control" aria-hidden="true" tabindex="-1" id="category">
@@ -132,10 +177,16 @@ http://www.tooplate.com/view/2075-digital-team
       </div>
             
     </div>
-
+    <br>
     <div class="row">
-      <div class="col-md-12 col-sm-12" >
-        <div id="map" style="width:100%;height:600px;"></div>
+      <div class="col-md-8 col-sm-8" >
+      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+        <div id="map" style="width:100%;height:600px;">
+           
+        </div>
+      </div>
+      <div class="col-md-4 col-sm-4" >
+        <div id="route-direction" ></div>
       </div>
     </div>
     
@@ -163,25 +214,84 @@ http://www.tooplate.com/view/2075-digital-team
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
 <script type="text/javascript">
+    var pos;
+    var map; 
 
    function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var geocoder = new google.maps.Geocoder;
+        map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: -34.397, lng: 150.644},
-          zoom: 15
+          zoom: 15,
+          draggable : true
         });
+        directionsDisplay = new google.maps.DirectionsRenderer;
+        directionsService = new google.maps.DirectionsService;
+        directionsDisplay.setMap(map);
+        directionsDisplay.setPanel(document.getElementById('route-direction'));
         var infoWindow = new google.maps.InfoWindow({map: map});
-
+        
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
+            pos = {
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+            handleLocationName(geocoder, pos);
+            marker = new google.maps.Marker({
+                    position: pos,
+                    map: map,
+                    draggable: true
+            });
 
+            marker.addListener('drag', function () {
+              pos = marker.getPosition();
+            });
+            google.maps.event.addListener(marker, 'dragend', function() {
+              handleLocationName(geocoder, pos);
+            });
+            
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             map.setCenter(pos);
+            var input = document.getElementById('pac-input');
+            var searchBox = new google.maps.places.SearchBox(input);
+            map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+            map.addListener('bounds_changed', function () {
+                searchBox.setBounds(map.getBounds());
+                pos = marker.getPosition();
+                infoWindow.setPosition(pos);
+                infoWindow.setContent('Location found.');
+                
+            });
+
+            searchBox.addListener('places_changed', function () {
+                var places = searchBox.getPlaces();
+                if (places.length == 0) {
+                    return;
+                }
+
+                        // For each place, get the icon, name and location.
+                        var bounds = new google.maps.LatLngBounds();
+                        places.forEach(function (place) {
+                            var icon = {
+                                url: place.icon,
+                                size: new google.maps.Size(71, 71),
+                                origin: new google.maps.Point(0, 0),
+                                anchor: new google.maps.Point(17, 34),
+                                scaledSize: new google.maps.Size(25, 25)
+                            };
+                            marker.setPosition(place.geometry.location);
+                            if (place.geometry.viewport) {
+                                // Only geocodes have viewport.
+                                bounds.union(place.geometry.viewport);
+                            } else {
+                                bounds.extend(place.geometry.location);
+                            }
+                        });
+                        map.fitBounds(bounds);
+                    });
+        
           }, function() {
             handleLocationError(true, infoWindow, map.getCenter());
           });
@@ -189,6 +299,27 @@ http://www.tooplate.com/view/2075-digital-team
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
+      }
+      function handleLocationName(geocoder, pos){
+        geocoder.geocode({'location': pos}, function(results, status) {
+              if (status === 'OK') {
+                if (results[0]) {
+                  // map.setZoom(11);
+                  // var marker = new google.maps.Marker({
+                  //   position: pos,
+                  //   map: map
+                  // });
+                  //infowindow.setContent(results[1].formatted_address);
+                  //infowindow.open(map, marker);
+
+                  document.getElementById("from").value = results[0].formatted_address + " " + marker.getPosition();
+                } else {
+                  window.alert('No results found');
+                }
+              } else {
+                window.alert('Geocoder failed due to: ' + status);
+              }
+            });
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
@@ -198,11 +329,7 @@ http://www.tooplate.com/view/2075-digital-team
                               'Error: Your browser doesn\'t support geolocation.');
       }
   $(document).ready(function(){
-
-    if (sessionStorage.getItem("id_pasar")) {
-      document.getElementById('market').value=sessionStorage.getItem("id_pasar");
-    }
-    
+ 
     $('#region').change(function(){
       $('#market').html('');
       $('#market').append('<option value="" disabled="true" selected="true">Please select market destination ..</option>');
@@ -270,17 +397,65 @@ http://www.tooplate.com/view/2075-digital-team
     });
 
     $('#button-route').on('click', '#get-route', function() {
+    
       //get value 'from'
       var from = $('#from').val();
       //get id market for get market location
       var id_market = $('#market').val();
-      //gimana caranya buat rutenya #.#
+      if(id_market != null) {
+         //gimana caranya buat rutenya #.#
+      var action = 'location';
+      
+      $.ajax({
+                type: "POST",
+                url: "function.php",
+                crossDomain: false,
+                //contentType: "application/json",
+                data:{
+                    'action': action,
+                    'id_market': id_market}, 
+                success: function(response){
+                    
+                    data = jQuery.parseJSON(response);
+                    if (data.length == 0) {
+                      $('#market').append( "<option disabled>-- No market with choosen category and region --</option>");
+                    } else {
+                      var longEnd = data.lng;
+                      var latEnd = data.lat;
+                      //alert(data);
+                      end = latEnd + ", " + longEnd;
+                      
+                      calculateAndDisplayRoute(directionsService, directionsDisplay, pos, end);
+                    }
+                },  error: function (xhr, ajaxOptions, thrownError) {
+                    window.alert("Kesalahan Internal");//error handle
+                }
+            });
+      
+      } else {
+        alert("Please choose the market destination.")
+      }
+     
+
     });
 
   });
+  function calculateAndDisplayRoute(directionsService, directionsDisplay, start, end) {
+  directionsService.route({
+    origin: start,
+    destination: end,
+    travelMode: google.maps.TravelMode.DRIVING
+  }, function(response, status) {
+    if (status === google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+}
 </script>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-CkwZplHgj3yDPctt_PKmaAR56SsGbd8&callback=initMap">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-CkwZplHgj3yDPctt_PKmaAR56SsGbd8&callback=initMap&libraries=places">
     </script>
 
 </body>
