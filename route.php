@@ -329,7 +329,9 @@ http://www.tooplate.com/view/2075-digital-team
                               'Error: Your browser doesn\'t support geolocation.');
       }
   $(document).ready(function(){
- 
+    if (sessionStorage.getItem("id_pasar")) {
+      document.getElementById('market').value=sessionStorage.getItem("id_pasar");
+    }
     $('#region').change(function(){
       $('#market').html('');
       $('#market').append('<option value="" disabled="true" selected="true">Please select market destination ..</option>');
