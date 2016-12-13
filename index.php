@@ -185,7 +185,7 @@ http://www.tooplate.com/view/2075-digital-team
 					<img src="images/team1.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
 							<h4>Saufi Rahman</h4>
-							<h3>"insert something here"</h3>
+							<h3>Back End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
@@ -199,8 +199,8 @@ http://www.tooplate.com/view/2075-digital-team
 				<div class="team-wrapper">
 					<img src="images/team2.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
-							<h4>Clara Indriani</h4>
-							<h3>"insert something here"</h3>
+							<h4>Clara Indriyani</h4>
+							<h3>Back End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
@@ -215,7 +215,7 @@ http://www.tooplate.com/view/2075-digital-team
 					<img src="images/team3.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
 							<h4>Intan Amalia Sari</h4>
-							<h3>"insert something here"</h3>
+							<h3>Front End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
@@ -230,7 +230,7 @@ http://www.tooplate.com/view/2075-digital-team
 					<img src="images/team4.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
 							<h4>Dewi Suci Rafianti</h4>
-							<h3>"insert something here"</h3>
+							<h3>Front End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
