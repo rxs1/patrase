@@ -96,7 +96,7 @@ http://www.tooplate.com/view/2075-digital-team
 						<i class="icon-cloud medium-icon"></i>
 							<h3>Find Traditional Market Location</h3>
 							<hr>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+							<p>You can search any traditional markets here by the name.</p>
 					</div>
 				</a>
 			</div>
@@ -105,7 +105,7 @@ http://www.tooplate.com/view/2075-digital-team
 				<a href="home.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
-							<h3>Find Traditional Market Location</h3>
+							<h3>View List of Traditional Market</h3>
 							<hr>
 							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
 					</div>
@@ -116,7 +116,7 @@ http://www.tooplate.com/view/2075-digital-team
 				<a href="home.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
-							<h3>Find Traditional Market Location</h3>
+							<h3>Find Nearest Traditional Market</h3>
 							<hr>
 							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
 					</div>
@@ -127,7 +127,7 @@ http://www.tooplate.com/view/2075-digital-team
 				<a href="home.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
-							<h3>Find Traditional Market Location</h3>
+							<h3>Route to A Market</h3>
 							<hr>
 							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
 					</div>
@@ -161,8 +161,8 @@ http://www.tooplate.com/view/2075-digital-team
 				
 				<!-- tab panes -->
 				<div class="tab-content">
-						<p>Duis aute irure dolor in <a href="#">reprehenderit</a> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed id est tincidunt, iaculis nulla vel, sodales metus. Morbi interdum accumsan augue, in accumsan neque lacinia sed. Fusce cursus eu ligula ut gravida.</p>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+						<p>Patrase is a geographic information system of traditional markets in DKI Jakarta. We provide complete information about the market you want to know or visit. This is a beta version so there are only about 28 markets we've collected. In the future, we hope that this website can grow much bigger and be the best solution for people to know about traditional markets in DKI Jakarta.</p>
+						<p>We actually build this website as our final project in geographic information system's course. Hope you like it.</p>
 				</div>
 			</div>
 		</div>
