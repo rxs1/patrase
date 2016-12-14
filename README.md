@@ -1,2 +1,0 @@
-# patrase
-Pasar Tradisional Search 
