@@ -57,7 +57,7 @@ http://www.tooplate.com/view/2075-digital-team
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php" class="smoothScroll">HOME</a></li>
-				<li><a href="home.php" class="smoothScroll">PATRASE</a></li>
+				<li><a href="discover.php" class="smoothScroll">PATRASE</a></li>
 
 			</ul>
 		</div>
@@ -73,7 +73,7 @@ http://www.tooplate.com/view/2075-digital-team
 				<h1>Patrase</h1>
 				<hr>
 				<a href="#work" class="smoothScroll btn btn-danger">What we do</a>
-				<a href="home.php" class="smoothScroll btn btn-default">Try to Search</a>
+				<a href="home.php" class="smoothScroll btn btn-default">Try this apps</a>
 			</div>
 		</div>
 	</div>		

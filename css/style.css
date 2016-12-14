@@ -792,3 +792,7 @@ media quires for mobile
   overflow-y: scroll;
 
 }
+
+#menubar-keren li .active {
+  background-color:#00c6d7;
+}
