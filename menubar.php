@@ -28,7 +28,7 @@
     <div id="menubar-keren" class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php" class="smoothScroll">HOME</a></li>
-        <li id="discover"><a href="dashboard.php" class="smoothScroll">DISCOVER MARKET</a></li>
+        <li id="discover"><a href="discover.php" class="smoothScroll">DISCOVER MARKET</a></li>
         <li id="market-list"><a href="market-list.php" class="smoothScroll">MARKET LIST</a></li>
         <li id="route"><a href="route.php" class="smoothScroll">ROUTE TO MARKET</a></li>
         <li id="nearest"><a href="nearest.php" class="smoothScroll">NEAREST MARKET</a></li>
