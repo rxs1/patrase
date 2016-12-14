@@ -170,7 +170,7 @@ desired effect
                             </div>
                             <div class="form-group">
                               <label>Alamat</label>
-                              <textarea style="height: 100px" class="form-control" placeholder="address" name="address"></textarea>
+                              <textarea style="height: 100px" class="form-control" placeholder="address" name="address" required></textarea>
                             </div>
                             <div class="form-group">
                               <label>Keterangan</label>
@@ -221,12 +221,12 @@ desired effect
                   <td><?=getCategoryNameById($row['id_category'])?></td>
                   <td><?=getRegionNameById($row['id_region'])?></td>
                   <td>
-                  <a href="edit_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
-                  <a href="edit_image.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-picture"></i></span></a>
-                  <a href="view_pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-primary"> <i class="glyphicon glyphicon-eye-open"></i></span></a>
+                  <a href="edit_pasar.php?id=<?=$row['id']?>&name=<?=$row['name']?>" ><span class="button btn-sm btn-warning"> <i class="glyphicon glyphicon-edit"></i></span></a>
+                  <a href="edit_image.php?id=<?=$row['id']?>&name=<?=$row['name']?>" ><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-picture"></i></span></a>
+                  <a href="view_pasar.php?id=<?=$row['id']?>&name=<?=$row['name']?>" ><span class="button btn-sm btn-primary"> <i class="glyphicon glyphicon-eye-open"></i></span></a>
 
-                  <a href="marker-pasar.php?id=<?=$row['id']?>" ><span class="button btn-sm btn-success"> <i class="glyphicon glyphicon-map-marker"></i></span></a>
-                  <a href="delete_pasar.php?id=<?=$row['id']?>" onClick="return confirm('Delete This Data?')"><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
+                  <a href="marker-pasar.php?id=<?=$row['id']?>&name=<?=$row['name']?>" ><span class="button btn-sm btn-success"> <i class="glyphicon glyphicon-map-marker"></i></span></a>
+                  <a href="delete_pasar.php?id=<?=$row['id']?>&name=<?=$row['name']?>" onClick="return confirm('Delete This Data?')"><span class="button btn-sm btn-danger"> <i class="glyphicon glyphicon-trash"></i></span></a>
                   </td>
                 </tr>
 
