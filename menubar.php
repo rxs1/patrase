@@ -17,7 +17,11 @@
 </div>
 
 <!-- navigation section -->
+<<<<<<< HEAD
 <section class="navbar navbar-fixed-top custom-navbar" role="navigation" style="background-color: #000">
+=======
+<section class="navbar navbar-fixed-top custom-navbar" role="navigation">
+>>>>>>> master
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
