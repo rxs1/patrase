@@ -223,7 +223,7 @@ http://www.tooplate.com/view/2075-digital-team
    function initMap() {
         var geocoder = new google.maps.Geocoder;
         map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: defaults,
           zoom: 15,
           draggable : true
         });
@@ -232,7 +232,16 @@ http://www.tooplate.com/view/2075-digital-team
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById('route-direction'));
         var infoWindow = new google.maps.InfoWindow({map: map});
-        
+        marker = new google.maps.Marker({
+          position: defaults,
+          map: map,
+          draggable: true
+        });
+
+        marker.addListener('drag', function () {
+          pos = marker.getPosition();
+        });
+        pos = defaults;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
           navigator.geolocation.getCurrentPosition(function(position) {
@@ -257,7 +266,17 @@ http://www.tooplate.com/view/2075-digital-team
             infoWindow.setPosition(pos);
             infoWindow.setContent('Location found.');
             map.setCenter(pos);
-            var input = document.getElementById('pac-input');
+            
+        
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+
+          // Browser doesn't support Geolocation
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+        var input = document.getElementById('pac-input');
             var searchBox = new google.maps.places.SearchBox(input);
             map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
             map.addListener('bounds_changed', function () {
@@ -294,15 +313,6 @@ http://www.tooplate.com/view/2075-digital-team
                         });
                         map.fitBounds(bounds);
                     });
-        
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
       }
       function handleLocationName(geocoder, pos){
         geocoder.geocode({'location': pos}, function(results, status) {
@@ -327,17 +337,6 @@ http://www.tooplate.com/view/2075-digital-team
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        
-          marker = new google.maps.Marker({
-                    position: defaults,
-                    map: map,
-                    draggable: true
-            });
-
-            marker.addListener('drag', function () {
-              pos = marker.getPosition();
-            });
-            map.setCenter(defaults);
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
