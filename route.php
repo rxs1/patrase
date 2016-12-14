@@ -186,7 +186,9 @@ http://www.tooplate.com/view/2075-digital-team
         </div>
       </div>
       <div class="col-md-4 col-sm-4" >
+       <div class="scrolling">
         <div id="route-direction" ></div>
+      </div>
       </div>
     </div>
     
@@ -216,7 +218,8 @@ http://www.tooplate.com/view/2075-digital-team
 <script type="text/javascript">
     var pos;
     var map; 
-
+    var marker;
+    var defaults = {lat: -6.22171915637258, lng: 106.85611756132812};
    function initMap() {
         var geocoder = new google.maps.Geocoder;
         map = new google.maps.Map(document.getElementById('map'), {
@@ -296,6 +299,7 @@ http://www.tooplate.com/view/2075-digital-team
             handleLocationError(true, infoWindow, map.getCenter());
           });
         } else {
+
           // Browser doesn't support Geolocation
           handleLocationError(false, infoWindow, map.getCenter());
         }
@@ -323,6 +327,17 @@ http://www.tooplate.com/view/2075-digital-team
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        
+          marker = new google.maps.Marker({
+                    position: defaults,
+                    map: map,
+                    draggable: true
+            });
+
+            marker.addListener('drag', function () {
+              pos = marker.getPosition();
+            });
+            map.setCenter(defaults);
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :

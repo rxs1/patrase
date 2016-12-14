@@ -786,3 +786,9 @@ media quires for mobile
     font-size: 12px;
   }
 }
+
+.scrolling #route-direction{
+  height: 600px;
+  overflow-y: scroll;
+
+}
