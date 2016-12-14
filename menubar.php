@@ -15,7 +15,9 @@
        <div class="sk-circle12 sk-circle"></div>
     </div>
 </div>
-<section class="navbar navbar-fixed-top custom-navbar" role="navigation" style="background-color:#4B4B4B">
+
+<!-- navigation section -->
+<section class="navbar navbar-fixed-top custom-navbar" role="navigation">
   <div class="container">
     <div class="navbar-header">
       <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -23,16 +25,23 @@
         <span class="icon icon-bar"></span>
         <span class="icon icon-bar"></span>
       </button>
-      <a href="#" class="navbar-brand">Patrase</a>
+      <a href="#" class="navbar-brand">Atlas Team</a>
     </div>
-    <div id="menubar-keren" class="collapse navbar-collapse">
+    <div class="collapse navbar-collapse">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="index.php" class="smoothScroll">HOME</a></li>
-        <li id="discover"><a href="dashboard.php" class="smoothScroll">DISCOVER MARKET</a></li>
-        <li id="market-list"><a href="market-list.php" class="smoothScroll">MARKET LIST</a></li>
-        <li id="route"><a href="route.php" class="smoothScroll">ROUTE TO MARKET</a></li>
-        <li id="nearest"><a href="nearest.php" class="smoothScroll">NEAREST MARKET</a></li>
-
+        <li><a href="#work" class="smoothScroll">WHAT WE DO</a></li>
+        <li><a href="#about" class="smoothScroll">ABOUT US</a></li>
+        <li><a href="#team" class="smoothScroll">TEAM</a></li>
+        <li class="dropdown">
+          <a href="index.php" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">PATRASE<span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu" style="background-color: transparent;">
+            <li><a href="find-market.php" class="smoothScroll">FIND</a></li>
+            <li><a href="nearest.php" class="smoothScroll">NEAREST MARKET</a></li>
+            <li><a href="market-list.php" class="smoothScroll">MARKET LIST</a></li>
+            <li><a href="route.php" class="smoothScroll">ROUTE</a></li> 
+          </ul>
+        </li>
       </ul>
     </div>
   </div>

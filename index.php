@@ -52,13 +52,23 @@ http://www.tooplate.com/view/2075-digital-team
 				<span class="icon icon-bar"></span>
 				<span class="icon icon-bar"></span>
 			</button>
-			<a href="#" class="navbar-brand">Digital Team</a>
+			<a href="#" class="navbar-brand">Atlas Team</a>
 		</div>
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php" class="smoothScroll">HOME</a></li>
-				<li><a href="discover.php" class="smoothScroll">PATRASE</a></li>
-
+				<li><a href="#work" class="smoothScroll">WHAT WE DO</a></li>
+				<li><a href="#about" class="smoothScroll">ABOUT US</a></li>
+				<li><a href="#team" class="smoothScroll">TEAM</a></li>
+				<li class="dropdown">
+					<a href="index.php" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">PATRASE<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu" style="background-color: transparent;">
+						<li><a href="find-market.php" class="smoothScroll">FIND</a></li>
+						<li><a href="nearest.php" class="smoothScroll">NEAREST MARKET</a></li>
+						<li><a href="market-list.php" class="smoothScroll">MARKET LIST</a></li>
+						<li><a href="route.php" class="smoothScroll">ROUTE</a></li>	
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -73,7 +83,7 @@ http://www.tooplate.com/view/2075-digital-team
 				<h1>Patrase</h1>
 				<hr>
 				<a href="#work" class="smoothScroll btn btn-danger">What we do</a>
-				<a href="home.php" class="smoothScroll btn btn-default">Try this apps</a>
+				<a href="find-market.php" class="smoothScroll btn btn-default">Try to Search</a>
 			</div>
 		</div>
 	</div>		
@@ -85,16 +95,16 @@ http://www.tooplate.com/view/2075-digital-team
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<div class="section-title">
-					<strong>PATRASE</strong>
-					<h1 class="heading bold">WHAT WE DO</h1>
-					<hr>
+					<strong>WHAT WE DO</strong>
+					<!--<h1 class="heading bold">WHAT WE DO</h1>
+					<hr>-->
 				</div>
 			</div>
 			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
+				<a href="find-market.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
-							<h3>Find Traditional Market Location</h3>
+							<h3>Find Traditional Market</h3>
 							<hr>
 							<p>You can search any traditional markets here by the name.</p>
 					</div>
@@ -102,18 +112,7 @@ http://www.tooplate.com/view/2075-digital-team
 			</div>
 
 			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
-					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
-						<i class="icon-cloud medium-icon"></i>
-							<h3>View List of Traditional Market</h3>
-							<hr>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
-					</div>
-				</a>
-			</div>
-
-			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
+				<a href="nearest.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
 							<h3>Find Nearest Traditional Market</h3>
@@ -124,7 +123,18 @@ http://www.tooplate.com/view/2075-digital-team
 			</div>
 
 			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
+				<a href="market-list.php" style="color: #000">
+					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
+						<i class="icon-cloud medium-icon"></i>
+							<h3>List of Traditional Market</h3>
+							<hr>
+							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+					</div>
+				</a>
+			</div>
+
+			<div class="col-md-6">
+				<a href="route.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
 							<h3>Route to A Market</h3>
@@ -147,16 +157,16 @@ http://www.tooplate.com/view/2075-digital-team
 		<div class="row">
 			<div class="col-md-12 col-sm-12 text-center">
 				<div class="section-title">
-					<strong>02</strong>
-					<h1 class="heading bold">ABOUT US</h1>
-					<hr>
+					<strong>ABOUT US</strong>
+					<!--<h1 class="heading bold">ABOUT US</h1>
+					<hr>-->
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-12">
 				<img src="images/about-img.jpg" class="img-responsive" alt="about img">
 			</div>
 			<div class="col-md-6 col-sm-12">
-				<h3 class="bold">PATRASE TEAM</h3>
+				<h3 class="bold">ATLAS TEAM</h3>
 				<h1 class="heading bold">Pasar Traditional Search</h1>
 				
 				<!-- tab panes -->
@@ -175,9 +185,9 @@ http://www.tooplate.com/view/2075-digital-team
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
 				<div class="section-title">
-					<strong>03</strong>
-					<h1 class="heading bold">OUR TEAM</h1>
-					<hr>
+					<strong>OUR TEAM</strong>
+					<!--<h1 class="heading bold">OUR TEAM</h1>
+					<hr>-->
 				</div>
 			</div>
 			<div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.9s">
