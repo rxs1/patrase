@@ -6,6 +6,8 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
       getlist();
    } elseif ($action == "location"){
       getLocation();
+   }elseif ($action == "allLocation"){
+      getAllLocation();
    } else {
       detail();
    }
@@ -18,6 +20,19 @@ function getLocation(){
   $result2 = @mysql_query($query2);
 
   $return = mysql_fetch_array($result2, MYSQL_ASSOC);
+  echo json_encode($return);
+}
+
+function getAllLocation(){
+  $query2 = "SELECT * FROM mst_location";
+  $result2 = @mysql_query($query2);
+  $return=array();
+  while($row = mysql_fetch_array($result2, MYSQL_ASSOC)){
+    $data['lat'] = $row['lat'];
+    $data['lng'] = $row['lng'];
+    $return[] = $data;
+  }
+  
   echo json_encode($return);
 }
 

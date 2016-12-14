@@ -1,3 +1,5 @@
+<?php require_once('connect_database.php');?>
+                 
 <meta charset="utf-8">
   <title><?=$title?></title>
   <meta http-equiv="X-UA-Compatible" content="IE=Edge">

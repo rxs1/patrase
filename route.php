@@ -24,8 +24,7 @@
           <h5><i class="icon-globe small-icon"></i> Region</h5>
             <select name="region" class="form-control" aria-hidden="true" tabindex="-1" id="region">
                 <option value="" disabled="true" selected="true">Please select region ..</option>
-                <?php
-                  require_once('connect_database.php');
+                <?php 
                   $query1 = "SELECT * FROM mst_region";
                   $result1 = @mysql_query($query1);
                   $i=0;
