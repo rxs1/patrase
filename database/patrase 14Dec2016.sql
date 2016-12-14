@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 14, 2016 at 12:13 PM
+-- Generation Time: Dec 14, 2016 at 01:08 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 5.5.38
 
@@ -37,7 +37,9 @@ CREATE TABLE `mst_category` (
 --
 
 INSERT INTO `mst_category` (`id`, `name`, `icon`) VALUES
-(21, 'Barang Antik', 'antique-icon.png');
+(21, 'Barang Antik', 'icon-18-36-04.png'),
+(22, 'Kebutuhan sehari-hari', 'icon-00-30-26.png'),
+(23, 'Grosir Tekstil dan Garmen', 'icon-18-39-00.png');
 
 -- --------------------------------------------------------
 
@@ -63,7 +65,8 @@ INSERT INTO `mst_location` (`id`, `lat`, `lng`) VALUES
 (10, -6.17692, 106.843),
 (11, -6.19222, 106.849),
 (12, -6.14417, 106.842),
-(13, -6.13782, 106.782);
+(13, -6.13782, 106.782),
+(14, -6.15134, 106.814);
 
 -- --------------------------------------------------------
 
@@ -91,13 +94,14 @@ CREATE TABLE `mst_pasar` (
 --
 
 INSERT INTO `mst_pasar` (`id`, `name`, `id_category`, `id_region`, `id_location`, `keterangan`, `time_open`, `time_close`, `active_day`, `address`, `create_date`, `update_date`) VALUES
-(7, 'Pasar Baru', 21, 15, 0, 'Pusat perbelanjaan ini didirikan pada tahun 1820, dan merupakan pusat perbelanjaan tertua di Jakarta. Ujung selatan Jalan Pasar Baru berbatasan dengan Jalan Antara dan Jalan Pasar Baru Selatan, serta Jalan Pos yang berdekatan dengan Gedung Kesenian Jakarta. Ujung utara Jalan Pasar Baru berbatasan dengan Jalan Kyai Haji Samanhudi, dekat Metro Pasar Baru dan Jalan Gereja Ayam. Di sisi kiri dan kanan Jalan Pasar Baru terdapat toko pakaian, toko tekstil dan tailor, toko alat olahraga dan sepatu, toko kacamata, dan toko perhiasan emas.', '09:00:00', '18:00:00', 0, 'Jalan Pasar Baru, Kelurahan Pasar Baru, Kecamatan Sawah Besar, Jakarta Pusat', '2016-12-14 10:26:07', '0000-00-00 00:00:00'),
+(7, 'Pasar Baru', 22, 15, 0, 'Pusat perbelanjaan ini didirikan pada tahun 1820, dan merupakan pusat perbelanjaan tertua di Jakarta. Ujung selatan Jalan Pasar Baru berbatasan dengan Jalan Antara dan Jalan Pasar Baru Selatan, serta Jalan Pos yang berdekatan dengan Gedung Kesenian Jakarta. Ujung utara Jalan Pasar Baru berbatasan dengan Jalan Kyai Haji Samanhudi, dekat Metro Pasar Baru dan Jalan Gereja Ayam. Di sisi kiri dan kanan Jalan Pasar Baru terdapat toko pakaian, toko tekstil dan tailor, toko alat olahraga dan sepatu, toko kacamata, dan toko perhiasan emas.', '09:00:00', '18:00:00', 0, 'Jalan Pasar Baru, Kelurahan Pasar Baru, Kecamatan Sawah Besar, Jakarta Pusat', '2016-12-14 10:26:07', '0000-00-00 00:00:00'),
 (8, 'Pasar Surabaya', 21, 15, 0, 'Pasar Loak terkenal di Jakarta, sangat cocok untuk orang orang yang ingin mencari barang antik. Di pasar ini, Anda dapat menemukan berbagai macam barang kuno nan antik. Ada lampu kristal, patung-patung ukiran dari kayu, telepon kuno, keris, aksesoris, benda-benda galangan kapal, beragam peralatan makan antik dan masih banyak lagi. Salah satu yang terkenal adalah koleksi piringan hitam tempo dulu.', '07:00:00', '18:00:00', 0, 'Jalan Surabaya No. 46, Menteng, RT.15/RW.5, Menteng, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10310, Indonesia', '2016-12-14 10:26:59', '0000-00-00 00:00:00'),
-(9, 'Pasar Tanah Abang', 21, 15, 0, 'Pasar Tanah Abang atau Pasar Sabtu dibangun oleh Yustinus Vinck pada 30 Agustus 1735. Yustinus Vinck mendirikan Pasar Tanah Abang Pasar atas izin dari Gubernur Jenderal Abraham Patramini. Izin yang diberikan saat itu untuk Pasar Tanah Abang adalah untuk berjualan tekstil serta barang kelontong dan hanya buka setiap hari Sabtu. Oleh karena itu, pasar ini disebut Pasar Sabtu.\r\n\r\nPasar Tanah Abang semakin berkembang setelah dibangunnya Stasiun Tanah Abang. Di tempat tersebut mulai dibangun tempat-tempat seperti Masjid Al Makmur dan Klenteng Hok Tek Tjen Sien yang keduanya seusia dengan Pasar Tanah Abang. Pada tahun 1973, Pasar Tanah Abang diremajakan, diganti dengan 4 bangunan berlantai empat, dan sudah mengalami dua kali kebakaran, pertama tanggal 30 Desember 1978, Blok A di lantai tiga dan kedua menimpa Blok B tanggal 13 Agustus 1979. Pada tahun 1975 tercatat kiosnya ada 4.351 buah dengan 3.016 pedagang.', '08:00:00', '18:00:00', 0, 'Jl. Kb. Jati, Kp. Bali, Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10240, Indonesia', '2016-12-14 10:28:12', '0000-00-00 00:00:00'),
-(10, 'Pasar Senen', 21, 15, 0, 'Pasar Senen adalah landmark yang terkenal di Ibukota, bahkan di seluruh Indonesia. Ketenarannya didulang sejak zaman Belanda dan mencapai puncaknya pada era tahun 1970-1990-an. Saking bekennya pasar ini, namanya diabadikan sebagai nama wilayah dan beberapa fasilitas penting didirikan di sekitarnya seperti Stasiun Senen, Terminal Senen, GOR Planet Senen, bahkan mal Atrium Senen.\r\n\r\nSejarah mencatat pasar ini tak lepas dari pengaruh tuan tanah bernama Justinus Vinck yang merintis pasar ini pada tahun 1735. Hebatnya, pasar ini menjadi pasar pertama yang menerapkan sistem jual beli dengan menggunakan alat tukar uang.', '07:00:00', '18:00:00', 0, 'Jalan Senen Raya, RW.03, Senen, RW.3, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10410, Indonesia', '2016-12-14 10:29:04', '0000-00-00 00:00:00'),
-(11, 'Pasar Paseban', 21, 15, 0, 'Sejak puluhan tahun yang lalu Pasar Paseban sudah melayani berbagai kebutuhan masyarakat akan busana,  perhiasan emas, berbagai aksesoris, serta kebutuhan belanja bahan makanan sehari-hari.\r\n\r\nPasar yang nampak mungil dari luar serta terkesan padat dikarenakan kawasan parkir yang padat ini ternyata memanjang kebelakang tembus ke Jalan Kramat Lontar sampai ke bantaran kali. Yang menarik dari Pasar Paseban adalah,  disini adalah pusat belanja busana yang ekonomis sekaligus ada pula kios-kios penjahit yang melayani berbagai jahitan pakaian pria-wanita, kebaya, obras, dan neci.', '08:00:00', '18:00:00', 0, 'Jl. Kramat Raya, RT.15/RW.1, Paseban, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10440, Indonesia', '2016-12-14 10:30:03', '0000-00-00 00:00:00'),
-(12, 'Pasar Rajawali', 21, 15, 0, '', '05:00:00', '09:00:00', 0, 'Jl. Rajawali Selatan XII, RT.8/RW.6, Gn. Sahari Utara, Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720, Indonesia', '2016-12-14 10:31:30', '0000-00-00 00:00:00'),
-(13, 'Pasar Teluk Gong', 21, 19, 0, '', '00:00:00', '23:45:00', 0, 'Jalan Raya Teluk Gong V No. 30, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta, Indonesia', '2016-12-14 10:42:00', '0000-00-00 00:00:00');
+(9, 'Pasar Tanah Abang', 23, 15, 0, 'Pasar Tanah Abang atau Pasar Sabtu dibangun oleh Yustinus Vinck pada 30 Agustus 1735. Yustinus Vinck mendirikan Pasar Tanah Abang Pasar atas izin dari Gubernur Jenderal Abraham Patramini. Izin yang diberikan saat itu untuk Pasar Tanah Abang adalah untuk berjualan tekstil serta barang kelontong dan hanya buka setiap hari Sabtu. Oleh karena itu, pasar ini disebut Pasar Sabtu.\r\n\r\nPasar Tanah Abang semakin berkembang setelah dibangunnya Stasiun Tanah Abang. Di tempat tersebut mulai dibangun tempat-tempat seperti Masjid Al Makmur dan Klenteng Hok Tek Tjen Sien yang keduanya seusia dengan Pasar Tanah Abang. Pada tahun 1973, Pasar Tanah Abang diremajakan, diganti dengan 4 bangunan berlantai empat, dan sudah mengalami dua kali kebakaran, pertama tanggal 30 Desember 1978, Blok A di lantai tiga dan kedua menimpa Blok B tanggal 13 Agustus 1979. Pada tahun 1975 tercatat kiosnya ada 4.351 buah dengan 3.016 pedagang.', '08:00:00', '18:00:00', 0, 'Jl. Kb. Jati, Kp. Bali, Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10240, Indonesia', '2016-12-14 10:28:12', '0000-00-00 00:00:00'),
+(10, 'Pasar Senen', 22, 15, 0, 'Pasar Senen adalah landmark yang terkenal di Ibukota, bahkan di seluruh Indonesia. Ketenarannya didulang sejak zaman Belanda dan mencapai puncaknya pada era tahun 1970-1990-an. Saking bekennya pasar ini, namanya diabadikan sebagai nama wilayah dan beberapa fasilitas penting didirikan di sekitarnya seperti Stasiun Senen, Terminal Senen, GOR Planet Senen, bahkan mal Atrium Senen.\r\n\r\nSejarah mencatat pasar ini tak lepas dari pengaruh tuan tanah bernama Justinus Vinck yang merintis pasar ini pada tahun 1735. Hebatnya, pasar ini menjadi pasar pertama yang menerapkan sistem jual beli dengan menggunakan alat tukar uang.', '07:00:00', '18:00:00', 0, 'Jalan Senen Raya, RW.03, Senen, RW.3, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10410, Indonesia', '2016-12-14 10:29:04', '0000-00-00 00:00:00'),
+(11, 'Pasar Paseban', 22, 15, 0, 'Sejak puluhan tahun yang lalu Pasar Paseban sudah melayani berbagai kebutuhan masyarakat akan busana,  perhiasan emas, berbagai aksesoris, serta kebutuhan belanja bahan makanan sehari-hari.\r\n\r\nPasar yang nampak mungil dari luar serta terkesan padat dikarenakan kawasan parkir yang padat ini ternyata memanjang kebelakang tembus ke Jalan Kramat Lontar sampai ke bantaran kali. Yang menarik dari Pasar Paseban adalah,  disini adalah pusat belanja busana yang ekonomis sekaligus ada pula kios-kios penjahit yang melayani berbagai jahitan pakaian pria-wanita, kebaya, obras, dan neci.', '08:00:00', '18:00:00', 0, 'Jl. Kramat Raya, RT.15/RW.1, Paseban, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10440, Indonesia', '2016-12-14 10:30:03', '0000-00-00 00:00:00'),
+(12, 'Pasar Rajawali', 22, 15, 0, '', '05:00:00', '09:00:00', 0, 'Jl. Rajawali Selatan XII, RT.8/RW.6, Gn. Sahari Utara, Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720, Indonesia', '2016-12-14 10:31:30', '0000-00-00 00:00:00'),
+(13, 'Pasar Teluk Gong', 22, 19, 0, '', '00:00:00', '23:45:00', 0, 'Jalan Raya Teluk Gong V No. 30, Kota Jkt Utara, Daerah Khusus Ibukota Jakarta, Indonesia', '2016-12-14 10:42:00', '0000-00-00 00:00:00'),
+(14, 'Pasar Gang Kancil', 22, 18, 0, '', '08:00:00', '18:00:00', 0, 'Jl. Keamanan I, RT.13/RW.3, Keagungan, Jakarta Barat, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11130, Indonesia', '2016-12-14 11:28:21', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -215,12 +219,12 @@ ALTER TABLE `mst_region`
 -- AUTO_INCREMENT for table `mst_category`
 --
 ALTER TABLE `mst_category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `mst_pasar`
 --
 ALTER TABLE `mst_pasar`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `mst_pasar_img`
 --
