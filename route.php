@@ -102,15 +102,7 @@
 <!-- footer section -->
 <?php include('footer.php')?>
 
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/smoothscroll.js"></script>
-<script src="js/isotope.js"></script>
-<script src="js/imagesloaded.min.js"></script>
-<script src="js/nivo-lightbox.min.js"></script>
-<script src="js/jquery.backstretch.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="js/custom.js"></script>
+
 <script type="text/javascript">
     var pos;
     var map; 
@@ -128,15 +120,7 @@
         directionsDisplay.setMap(map);
         directionsDisplay.setPanel(document.getElementById('route-direction'));
         var infoWindow = new google.maps.InfoWindow({map: map});
-        marker = new google.maps.Marker({
-          position: defaults,
-          map: map,
-          draggable: true
-        });
-
-        marker.addListener('drag', function () {
-          pos = marker.getPosition();
-        });
+       
         pos = defaults;
         // Try HTML5 geolocation.
         if (navigator.geolocation) {
@@ -214,13 +198,7 @@
         geocoder.geocode({'location': pos}, function(results, status) {
               if (status === 'OK') {
                 if (results[0]) {
-                  // map.setZoom(11);
-                  // var marker = new google.maps.Marker({
-                  //   position: pos,
-                  //   map: map
-                  // });
-                  //infowindow.setContent(results[1].formatted_address);
-                  //infowindow.open(map, marker);
+                 
 
                   document.getElementById("from").value = results[0].formatted_address + " " + marker.getPosition();
                 } else {
@@ -233,6 +211,15 @@
       }
 
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+         marker = new google.maps.Marker({
+          position: defaults,
+          map: map,
+          draggable: true
+        });
+
+        marker.addListener('drag', function () {
+          pos = marker.getPosition();
+        });
         infoWindow.setPosition(pos);
         infoWindow.setContent(browserHasGeolocation ?
                               'Error: The Geolocation service failed.' :
