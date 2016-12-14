@@ -187,11 +187,7 @@ http://www.tooplate.com/view/2075-digital-team
 							<h4>Saufi Rahman</h4>
 							<h3>Back End Developer</h3>
 							<hr>
-							<ul class="social-icon">
-								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
-								<li><a href="#" class="fa fa-twitter wow fadeIn" data-wow-delay="0.6s"></a></li>
-								<li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="0.9s"></a></li>
-							</ul>
+						
 						</div>
 				</div>
 			</div>
@@ -202,11 +198,7 @@ http://www.tooplate.com/view/2075-digital-team
 							<h4>Clara Indriyani</h4>
 							<h3>Back End Developer</h3>
 							<hr>
-							<ul class="social-icon">
-								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
-								<li><a href="#" class="fa fa-twitter wow fadeIn" data-wow-delay="0.6s"></a></li>
-								<li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="0.9s"></a></li>
-							</ul>
+							
 						</div>
 				</div>
 			</div>
