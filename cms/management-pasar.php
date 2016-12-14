@@ -170,7 +170,7 @@ desired effect
                             </div>
                             <div class="form-group">
                               <label>Alamat</label>
-                              <textarea style="height: 100px" class="form-control" placeholder="address" name="address"></textarea>
+                              <textarea style="height: 100px" class="form-control" placeholder="address" name="address" required></textarea>
                             </div>
                             <div class="form-group">
                               <label>Keterangan</label>
