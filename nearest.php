@@ -112,8 +112,7 @@ $(document).ready(function(){
                         handleLocationName(geocoder, startPoint);
                       });
                       
-                      infoWindow.setPosition(startPoint);
-                      infoWindow.setContent('Location found.');
+                     
                       map.setCenter(startPoint);
 
                      start = new google.maps.LatLng(startPoint); 
@@ -138,8 +137,8 @@ $(document).ready(function(){
                   map.addListener('bounds_changed', function () {
                       searchBox.setBounds(map.getBounds());
                       pos = marker.getPosition();
-                      infoWindow.setPosition(pos);
-                      infoWindow.setContent('Location found.');
+                     
+                     
                       
                   });
 
@@ -215,7 +214,7 @@ $(document).ready(function(){
                         if(marker1 != null){
                           marker1.setPosition(latlngs[distances[0].marker]);
                         }else{
-                        marker1= new google.maps.Marker({map: map, position: latlngs[distances[0].marker]});  
+                          marker1= new google.maps.Marker({map: map, position: latlngs[distances[0].marker]});  
                         }
                         //extend the bounds of the map to include the two closest markers and the starting point
                         bounds.extend(startPoint);
@@ -230,7 +229,7 @@ $(document).ready(function(){
                   } 
 
                     function handleLocationName(geocoder, pos){
-                      geocoder.geocode({'location': pos}, function(results, status) {
+                      geocoder.geocode({'location': start}, function(results, status) {
                             if (status === 'OK') {
                               if (results[0]) {
                                
