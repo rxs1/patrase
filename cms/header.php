@@ -57,7 +57,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 
-                <center>  <a href="#" class="btn btn-default btn-flat">Logout</a></center>
+                <center>  <a href="logout.php" class="btn btn-default btn-flat">Logout</a></center>
                 
               </li>
             </ul>

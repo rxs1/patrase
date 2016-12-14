@@ -57,6 +57,7 @@ http://www.tooplate.com/view/2075-digital-team
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php" class="smoothScroll">HOME</a></li>
+<<<<<<< HEAD
 				<li><a href="#work" class="smoothScroll">WHAT WE DO</a></li>
 				<li><a href="#about" class="smoothScroll">ABOUT US</a></li>
 				<li><a href="#team" class="smoothScroll">TEAM</a></li>
@@ -69,6 +70,10 @@ http://www.tooplate.com/view/2075-digital-team
 						<li><a href="route.php" class="smoothScroll">ROUTE</a></li>	
 					</ul>
 				</li>
+=======
+				<li><a href="discover.php" class="smoothScroll">PATRASE</a></li>
+
+>>>>>>> 31131802b0311ff49f432767f70c5eb99ad962c6
 			</ul>
 		</div>
 	</div>
@@ -83,7 +88,11 @@ http://www.tooplate.com/view/2075-digital-team
 				<h1>Patrase</h1>
 				<hr>
 				<a href="#work" class="smoothScroll btn btn-danger">What we do</a>
+<<<<<<< HEAD
 				<a href="find-market.php" class="smoothScroll btn btn-default">Try to Search</a>
+=======
+				<a href="home.php" class="smoothScroll btn btn-default">Try this apps</a>
+>>>>>>> 31131802b0311ff49f432767f70c5eb99ad962c6
 			</div>
 		</div>
 	</div>		
@@ -106,7 +115,7 @@ http://www.tooplate.com/view/2075-digital-team
 						<i class="icon-cloud medium-icon"></i>
 							<h3>Find Traditional Market</h3>
 							<hr>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+							<p>You can search any traditional markets here by the name.</p>
 					</div>
 				</a>
 			</div>
@@ -115,7 +124,11 @@ http://www.tooplate.com/view/2075-digital-team
 				<a href="nearest.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
+<<<<<<< HEAD
 							<h3>Find Nearest Traditional Market</h3>
+=======
+							<h3>View List of Traditional Market</h3>
+>>>>>>> 31131802b0311ff49f432767f70c5eb99ad962c6
 							<hr>
 							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
 					</div>
@@ -126,7 +139,11 @@ http://www.tooplate.com/view/2075-digital-team
 				<a href="market-list.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
+<<<<<<< HEAD
 							<h3>List of Traditional Market</h3>
+=======
+							<h3>Find Nearest Traditional Market</h3>
+>>>>>>> 31131802b0311ff49f432767f70c5eb99ad962c6
 							<hr>
 							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
 					</div>
@@ -137,7 +154,11 @@ http://www.tooplate.com/view/2075-digital-team
 				<a href="route.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
+<<<<<<< HEAD
 							<h3>Route to Traditional Market</h3>
+=======
+							<h3>Route to A Market</h3>
+>>>>>>> 31131802b0311ff49f432767f70c5eb99ad962c6
 							<hr>
 							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
 					</div>
@@ -171,8 +192,8 @@ http://www.tooplate.com/view/2075-digital-team
 				
 				<!-- tab panes -->
 				<div class="tab-content">
-						<p>Duis aute irure dolor in <a href="#">reprehenderit</a> in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Sed id est tincidunt, iaculis nulla vel, sodales metus. Morbi interdum accumsan augue, in accumsan neque lacinia sed. Fusce cursus eu ligula ut gravida.</p>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+						<p>Patrase is a geographic information system of traditional markets in DKI Jakarta. We provide complete information about the market you want to know or visit. This is a beta version so there are only about 28 markets we've collected. In the future, we hope that this website can grow much bigger and be the best solution for people to know about traditional markets in DKI Jakarta.</p>
+						<p>We actually build this website as our final project in geographic information system's course. Hope you like it.</p>
 				</div>
 			</div>
 		</div>
@@ -195,7 +216,7 @@ http://www.tooplate.com/view/2075-digital-team
 					<img src="images/team1.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
 							<h4>Saufi Rahman</h4>
-							<h3>"insert something here"</h3>
+							<h3>Back End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
@@ -209,8 +230,8 @@ http://www.tooplate.com/view/2075-digital-team
 				<div class="team-wrapper">
 					<img src="images/team2.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
-							<h4>Clara Indriani</h4>
-							<h3>"insert something here"</h3>
+							<h4>Clara Indriyani</h4>
+							<h3>Back End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
@@ -225,7 +246,7 @@ http://www.tooplate.com/view/2075-digital-team
 					<img src="images/team3.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
 							<h4>Intan Amalia Sari</h4>
-							<h3>"insert something here"</h3>
+							<h3>Front End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
@@ -240,7 +261,7 @@ http://www.tooplate.com/view/2075-digital-team
 					<img src="images/team4.jpg" class="img-responsive" alt="team img">
 						<div class="team-des">
 							<h4>Dewi Suci Rafianti</h4>
-							<h3>"insert something here"</h3>
+							<h3>Front End Developer</h3>
 							<hr>
 							<ul class="social-icon">
 								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>

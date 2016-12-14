@@ -57,7 +57,15 @@ http://www.tooplate.com/view/2075-digital-team
 		<div class="collapse navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php" class="smoothScroll">HOME</a></li>
-				<li><a href="dashboard.php" class="smoothScroll">PATRASE</a></li>
+				<li class="dropdown">
+					<a href="index.php" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">PATRASE<span class="caret"></span></a>
+					<ul class="dropdown-menu" role="menu" style="background-color: transparent;">
+						<li><a href="find-market.php" class="smoothScroll">FIND</a></li>
+			            <li><a href="nearest.php" class="smoothScroll">NEAREST MARKET</a></li>
+			            <li><a href="market-list.php" class="smoothScroll">MARKET LIST</a></li>
+			            <li><a href="route.php" class="smoothScroll">ROUTE</a></li> 
+					</ul>
+				</li>
 			</ul>
 		</div>
 	</div>
@@ -74,7 +82,7 @@ http://www.tooplate.com/view/2075-digital-team
 			</div>
 			 <div class="col-md-6 col-md-offset-3">
 			 <form method="GET" action="">
-			    <input type="text" style="width: 100%" id="searchInput" class="form-control" placeholder="Search Market..." >
+			    <input type="text" style="width: 100%" class="form-control" placeholder="Search Market..." >
 				  	<span class="input-group-btn">
 			        <a href="location.php"><button class="btn btn-default" type="button">Go!</button></a>
 			      </span>
@@ -105,21 +113,6 @@ http://www.tooplate.com/view/2075-digital-team
 <script src="js/jquery.backstretch.min.js"></script>
 <script src="js/wow.min.js"></script>
 <script src="js/custom.js"></script>
-<script>
-	function initMap() {
-    	var input = document.getElementById('searchInput');
-		var options = {
-		    types: ['(geocode)'],
-		};
 
-		autocomplete = new google.maps.places.Autocomplete(input, options);
-		
-	}
-	
-
-</script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-CkwZplHgj3yDPctt_PKmaAR56SsGbd8&callback=initMap&libraries=places">
-    </script>
 </body>
 </html>
