@@ -10,9 +10,13 @@ include('head.php');
 <?php
 include('menubar.php');
 ?>
-<div id="map" style="width:100%;height:600px;">
-           
-        </div>
+<section id="market-list">
+
+<!-- <div class="container"> -->
+<div id="map" style=" margin-top:5%;width:100%;height:600px;">
+        </div>   
+<!-- </div> -->
+</section>
 <?php
 include('footer.php');
 ?>
