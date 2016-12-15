@@ -71,31 +71,36 @@
                    //kalau udh ada id pasarnya, otomatis kepilih 
                 ?>
             </select>
-            <br>
         </div>
 
         <div id="button-route" style="text-align:center;">
-          <button id="get-route" class="btn default">Get Route</button>
+          <button id="get-route" class="btn default" style="margin-top:3%;">Get Route</button>
         </div>
       </div>
             
     </div>
-    <br>
-    <div class="row">
-      <div class="col-md-8 col-sm-8" >
-      <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-        <div id="map" style="width:100%;height:600px;">
-           
-        </div>
-      </div>
-      <div class="col-md-4 col-sm-4" >
-       <div class="scrolling">
-        <div id="route-direction" ></div>
-      </div>
-      </div>
-    </div>
     
-  </div>    
+  </div>
+  <div id="route-view">
+        <div class="container">
+            <div class="row">
+              <div class="col-md-12 col-sm-12">
+                    
+                        <div class="col-md-8 col-sm-8" >
+                        <input id="pac-input" class="controls" type="text" placeholder="Search Box">
+                          <div id="map" style="width:100%;height:600px;">
+                          </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4" >
+                         <div class="scrolling">
+                          <div id="route-direction" ></div>
+                        </div>
+                    </div>
+                  
+            </div>
+            </div>
+          </div>
+      </div>        
 </section>
 
 <!-- footer section -->

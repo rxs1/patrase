@@ -15,13 +15,13 @@ include('menubar.php');
 <section id="market-list">
   <div class="container">
     <div class="row">
-      <div class="col-md-8 col-md-offset-2 col-sm-12">
+      <div class="col-md-12 col-sm-12">
             <center><h2>Find Nearest</h2></center>
             <hr>
             <br>
             <input type="text" readonly="readonly" id="start" style="width: 100%" class="form-control" placeholder="Drag marker if your still not define start location" >
            
-            <center><p><button class="btn btn-primary"  id="find" ">Find Now</button></p></center>
+            <center><p style="margin-top:3%"><button class="btn btn-primary"  id="find" ">Find Now</button></p></center>
              <p class="col-md-12" id="result"> </p>
       </div>
        <div class="col-md-12 col-sm-12">
