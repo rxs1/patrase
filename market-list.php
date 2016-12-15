@@ -11,7 +11,7 @@
 
 
 <!-- navigation section -->
-<?include('menubar.php');?>
+<?php include('menubar.php');?>
 
 <!-- market list section -->
 <section id="market-list">

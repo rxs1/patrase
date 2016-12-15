@@ -55,11 +55,12 @@ http://www.tooplate.com/view/2075-digital-team
 			<a href="#" class="navbar-brand">Digital Team</a>
 		</div>
 		<div class="collapse navbar-collapse">
-			<ul class="nav navbar-nav navbar-right">
+				<?php include('menubar.php');?>
+			<!-- <ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php" class="smoothScroll">HOME</a></li>
 				<li><a href="discover.php" class="smoothScroll">PATRASE</a></li>
 
-			</ul>
+			</ul> -->
 		</div>
 	</div>
 </section>
