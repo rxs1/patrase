@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <?php
-	$title = "PATRASE";
+	$title = "Patrase Home";
 include('head.php');
 ?>
 </head>
