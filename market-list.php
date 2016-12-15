@@ -183,12 +183,12 @@
 
                       setInterval(function() { 
                         $('#slideshow > div:first')
-                          .fadeOut(2000)
+                          .fadeOut(3000)
                           .next()
-                          .fadeIn(2000)
+                          .fadeIn(3000)
                           .end()
                           .appendTo('#slideshow');
-                      },  4000);
+                      },  5000);
 
                   },  error: function (xhr, ajaxOptions, thrownError) {
                       window.alert("Kesalahan Internal");//error handle

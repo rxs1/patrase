@@ -8,6 +8,8 @@ if(isset($_POST['action']) && !empty($_POST['action'])) {
       getLocation();
    }elseif ($action == "allLocation"){
       getAllLocation();
+   }elseif ($action == "allLocationDetail"){
+      getAllLocationWithDescription();
    } else {
       detail();
    }
@@ -28,8 +30,27 @@ function getAllLocation(){
   $result2 = @mysql_query($query2);
   $return=array();
   while($row = mysql_fetch_array($result2, MYSQL_ASSOC)){
+    $data['id'] = $row['id'];
     $data['lat'] = $row['lat'];
     $data['lng'] = $row['lng'];
+    $return[] = $data;
+  }
+  
+  echo json_encode($return);
+}
+
+function getAllLocationWithDescription(){
+  $query2 = "SELECT * FROM mst_location l,mst_pasar p where p.id=l.id ";
+
+  $result2 = @mysql_query($query2);
+  echo mysql_error();
+  $return=array();
+  while($row = mysql_fetch_array($result2, MYSQL_ASSOC)){
+    $data['id'] = $row['id'];
+    $data['lat'] = $row['lat'];
+    $data['lon'] = $row['lng'];
+    $data['title'] = $row['name'];
+    $data['descr'] = '<h5>'.$data['title'].'</h5><hr>'.$row['keterangan'];
     $return[] = $data;
   }
   
@@ -71,6 +92,7 @@ function detail(){
   $img = array();
   $i = 0;
   while ($row = mysql_fetch_array($result_pasar)) {
+    $return['id'] = $row['id'];
     $return['name'] = $row['name'];
     $return['address'] = $row['address'];
     $return['time_open'] = date("g:i a", strtotime($row['time_open']));

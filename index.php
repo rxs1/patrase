@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Pasar Traditional Search</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-<!--
-
-Template 2075 Digital Team
-
-http://www.tooplate.com/view/2075-digital-team
-
--->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/et-line-font.css">
-	<link rel="stylesheet" href="css/nivo-lightbox.css">
-	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+<?php
+	$title = "Patrase";
+include('head.php');
+?>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -94,7 +77,7 @@ http://www.tooplate.com/view/2075-digital-team
 			<div class="col-md-6">
 				<a href="discover.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
-						<i class="icon-cloud medium-icon"></i>
+						<i class="icon-map-pin medium-icon"></i>
 							<h3>Discover Market Location</h3>
 							<hr>
 							<p>You can discover any traditional markets.</p>
@@ -105,7 +88,7 @@ http://www.tooplate.com/view/2075-digital-team
 			<div class="col-md-6">
 				<a href="market-list.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
-						<i class="icon-cloud medium-icon"></i>
+						<i class="icon-basket medium-icon"></i>
 							<h3>View List of Traditional Market</h3>
 							<hr>
 							<p>View list of market including its information. </p>
@@ -116,7 +99,7 @@ http://www.tooplate.com/view/2075-digital-team
 			<div class="col-md-6">
 				<a href="nearest.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
-						<i class="icon-cloud medium-icon"></i>
+						<i class="icon-globe medium-icon"></i>
 							<h3>Find Nearest Traditional Market</h3>
 							<hr>
 							<p>Find nearest market from desired location.</p>
@@ -127,7 +110,7 @@ http://www.tooplate.com/view/2075-digital-team
 			<div class="col-md-6">
 				<a href="route.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
-						<i class="icon-cloud medium-icon"></i>
+						<i class="icon-map medium-icon"></i>
 							<h3>Route to A Market</h3>
 							<hr>
 							<p>Route to a market from your position.</p>
@@ -242,15 +225,8 @@ http://www.tooplate.com/view/2075-digital-team
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col-sm-12">
-				<p>Copyright © Digital Team HTML5 Template | Design: <a href="http://www.tooplate.com" target="_parent">Tooplate</a></p>
+				<p>Copyright © Patrase Team Geographic Information Sistem 2016 </p>
 				<hr>
-				<ul class="social-icon">
-					<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
-					<li><a href="#" class="fa fa-twitter wow fadeIn" data-wow-delay="0.6s"></a></li>
-					<li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="0.9s"></a></li>
-					<li><a href="#" class="fa fa-behance wow fadeIn" data-wow-delay="0.9s"></a></li>
-					<li><a href="#" class="fa fa-tumblr wow fadeIn" data-wow-delay="0.9s"></a></li>
-				</ul>
 			</div>
 		</div>
 	</div>

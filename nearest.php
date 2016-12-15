@@ -2,7 +2,7 @@
 <html>
 <head>
 <?php
-$title='Discover Market';
+$title='Nearest Market';
 include('head.php');
 ?>
 </head>
@@ -42,7 +42,12 @@ include('footer.php');
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-CkwZplHgj3yDPctt_PKmaAR56SsGbd8&libraries=geometry,places&callback=initMap">
     </script>
  <script>
-
+function myFunction(id) {
+    sessionStorage.SessionName = "id_pasar";
+    sessionStorage.setItem("id_pasar",id);
+    window.location.href = 'route.php';
+    //infowindow.setContent('<div style="background-color: green">' + infowindow.getContent() + "</div>");
+  }
   function initMap(){
 
 
@@ -57,12 +62,14 @@ include('footer.php');
                     
                     data = jQuery.parseJSON(response);
                     locations= new Array();
+                    locationsObj = data;
                     if (data.length <= 1) {
                       $('#result').append( "<p>-- No market is define yet minimal 2 market --</p>");
                     } else {
 
                       for (var i = 0; i < data.length; i++) {
                         locations.push(data[i].lat+', '+data[i].lng);
+                        
                       }
                       init();
                       
@@ -76,7 +83,7 @@ include('footer.php');
       
             function init(){
                   var latlngs = [];
-                 
+                  var locInfo = [];
                   var map; 
                   var marker;
                   var startPoint;
@@ -92,7 +99,7 @@ include('footer.php');
                       draggable : true
                     });
                   var infoWindow = new google.maps.InfoWindow({map: map});
-                  
+                  var infoWindow1 = new google.maps.InfoWindow({map: map});;
                   // Try HTML5 geolocation.
                   if (navigator.geolocation) {
                     navigator.geolocation.getCurrentPosition(function(position) {
@@ -177,6 +184,7 @@ include('footer.php');
                      //find nearest
 
                      latlngs =[];
+                     locInfo = [];
                    
                       for (var j = 0; j < locations.length; j++) {
 
@@ -199,38 +207,72 @@ include('footer.php');
                   function compareDistances(loc){   
                    var bounds = new google.maps.LatLngBounds();        
                     latlngs.push(loc);//add markers to the latlngs array
-                  
+                    locInfo = locationsObj;
+                    //alert("mnb m"+locInfo[0].id);
                     //when the markers array length matches the locations array length...
                     if (latlngs.length == locations.length){
                         var distances = [];
+                        
                         //use geometry.spherical to calculate the distances between pairs of lat/lng coordinates
                         for(var j = 0; j < latlngs.length; j++){
-                            distances.push({distance:google.maps.geometry.spherical.computeDistanceBetween(startPoint, latlngs[j]), marker: j});
+                            var dist = {distance:google.maps.geometry.spherical.computeDistanceBetween(startPoint, latlngs[j]), marker: j};
+                            distances.push(dist);
+                            locInfo[j].distance = dist.distance;
+                            
+                            //alert(dist + " " + locationsObj[j]["distance"]);
+
+
                         }
 
+                        locInfo.sort(function(a, b) {
+                            //alert("sort");
+                            return a.distance - b.distance;
+                        });
                         //reorder the distances, shortest first, closest will then be distances[0] and distances[1]
                         distances.sort(function(a,b) {
+                            //alert (a.distance - b.distance);
                             return a.distance - b.distance;
                         });
                        
                         //add the two closest markers
                         if(marker1 != null){
                           marker1.setPosition(latlngs[distances[0].marker]);
+
                         }else{
                           marker1= new google.maps.Marker({map: map, position: latlngs[distances[0].marker]});  
                         }
                         //extend the bounds of the map to include the two closest markers and the starting point
                         bounds.extend(startPoint);
-                      
+                        //alert(locInfo[0]["id"]);
                         bounds.extend(latlngs[distances[0].marker]);
-                     
+                        $.ajax({
+                            type: "POST",
+                            url: "function.php",
+                            crossDomain: false,
+                            data:{
+                                'action': "detail",
+                                'id': locInfo[0]["id"]}, 
+                            success: function(response){
+                                data = jQuery.parseJSON(response);
+                                infoWindow1.setPosition(latlngs[distances[0].marker]);
+                                infoWindow1.setContent('<p><b>' + data.name + '</b></p>' +
+                                  '<p>' + data.address + '</p>' +
+                                  '<button class="btn btn-success" onclick="myFunction(' + data.id + ')">Route to</button>');
+                                alert
+                            },  error: function (xhr, ajaxOptions, thrownError) {
+                                window.alert("Kesalahan Internal");//error handle
+                            }
+                        });
+                        
+                        //alert (locationsObj[0]["id"]);
+
                         
                         //zoom the map to nicely fit the bounds of the two closest markers and the starting point
                         map.fitBounds(bounds);
 
                     }
                   } 
-
+                    
                     function handleLocationName(geocoder, pos){
                       geocoder.geocode({'location': start}, function(results, status) {
                             if (status === 'OK') {
