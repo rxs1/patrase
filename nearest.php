@@ -20,8 +20,9 @@ include('menubar.php');
             <hr>
             <br>
             <input type="text" readonly="readonly" id="start" style="width: 100%" class="form-control" placeholder="Drag marker if your still not define start location" >
-            <p class="alert alert-text" id="result"></p>
+            <
             <center><button class="btn btn-primary"  id="find" ">Find Now</button></center>
+            <div class="alert alert-text" id="result"></div>
       </div>
        <div class="col-md-12 col-sm-12">
             <input id="pac-input" class="controls" type="text" placeholder="Search Box">
@@ -172,9 +173,7 @@ $(document).ready(function(){
                   function findNearest(){
                      //find nearest
                      latlngs =[];
-                     if(marker1 != null){
-                        alert('masuk');
-                     }
+                   
                       for (var j = 0; j < locations.length; j++) {
 
                           codeAddress(locations[j]);
@@ -245,19 +244,11 @@ $(document).ready(function(){
                     }
 
                     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                       marker = new google.maps.Marker({
-                        position: defaults,
-                        map: map,
-                        draggable: true
-                      });
-
-                      marker.addListener('drag', function () {
-                        pos = marker.getPosition();
-                      });
-
-                      infoWindow.setPosition(pos);
+                      
+                      $('#result').append( '<p class="alert  alert-danger"> Please Active Your GPS to use this feature, then refresh your browser </p>');
+                      infoWindow.setPosition(defaults);
                       infoWindow.setContent(browserHasGeolocation ?
-                                            'Error: The Geolocation service failed.' :
+                                            '<p class="alert  alert-danger  ">Error: Please Active Your GPS to use this feature.</p>' :
                                             'Error: Your browser doesn\'t support geolocation.');
                     }
 
