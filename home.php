@@ -1,27 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>Pasar Traditional Search</title>
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="keywords" content="">
-	<meta name="description" content="">
-<!--
+<?php 
 
-Template 2075 Digital Team
-
-http://www.tooplate.com/view/2075-digital-team
-
--->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/animate.min.css">
-	<link rel="stylesheet" href="css/et-line-font.css">
-	<link rel="stylesheet" href="css/nivo-lightbox.css">
-	<link rel="stylesheet" href="css/nivo_themes/default/default.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:400,300,500' rel='stylesheet' type='text/css'>
+$title = "Home";
+include('head.php');?>
 </head>
 <body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
 
@@ -56,6 +39,7 @@ http://www.tooplate.com/view/2075-digital-team
 		</div>
 		<div class="collapse navbar-collapse">
 			<?php include('menubar.php');?>
+
 			<!-- <ul class="nav navbar-nav navbar-right">
 				<li><a href="index.php" class="smoothScroll">HOME</a></li>
 				<li><a href="dashboard.php" class="smoothScroll">PATRASE</a></li>

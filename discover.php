@@ -18,7 +18,12 @@ include('footer.php');
 ?>
 </body>
 <script type="text/javascript">
-
+	function myFunction(id) {
+    sessionStorage.SessionName = "id_pasar";
+    sessionStorage.setItem("id_pasar",id);
+    window.location.href = 'route.php';
+    //infowindow.setContent('<div style="background-color: green">' + infowindow.getContent() + "</div>");
+  }
   var defaults = {lat: -6.22171915637258, lng: 106.85611756132812};    
 
 	var arr = new Array();
@@ -78,7 +83,8 @@ include('footer.php');
                         // icon: img
                 });
 
-                bindInfoWindow(marker, map, infowindow, "<p>" + locations[i].descr + "</p>",locations[i].title);  
+                bindInfoWindow(marker, map, infowindow, "<p>" + locations[i].descr + "</p>" +
+                                  '<button class="btn btn-success" onclick="myFunction(' + locations[i].id + ')">Route to</button>',locations[i].title);  
 
             }
             function bindInfoWindow(marker, map, infowindow, html, Ltitle) { 
@@ -87,10 +93,7 @@ include('footer.php');
                           infowindow.open(map, marker); 
 
                   });
-                  google.maps.event.addListener(marker, 'mouseout', function() {
-                      infowindow.close();
 
-                  }); 
             }
 
         }

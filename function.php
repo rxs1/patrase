@@ -30,6 +30,7 @@ function getAllLocation(){
   $result2 = @mysql_query($query2);
   $return=array();
   while($row = mysql_fetch_array($result2, MYSQL_ASSOC)){
+    $data['id'] = $row['id'];
     $data['lat'] = $row['lat'];
     $data['lng'] = $row['lng'];
     $return[] = $data;
@@ -45,6 +46,7 @@ function getAllLocationWithDescription(){
   echo mysql_error();
   $return=array();
   while($row = mysql_fetch_array($result2, MYSQL_ASSOC)){
+    $data['id'] = $row['id'];
     $data['lat'] = $row['lat'];
     $data['lon'] = $row['lng'];
     $data['title'] = $row['name'];
@@ -90,6 +92,7 @@ function detail(){
   $img = array();
   $i = 0;
   while ($row = mysql_fetch_array($result_pasar)) {
+    $return['id'] = $row['id'];
     $return['name'] = $row['name'];
     $return['address'] = $row['address'];
     $return['time_open'] = date("g:i a", strtotime($row['time_open']));
