@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <?php
-  $title='ROUTE TO MARKET';
+  $title='Route To Market';
   include('head.php');
   ?>
 </head>
