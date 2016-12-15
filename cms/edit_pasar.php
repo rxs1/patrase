@@ -105,7 +105,20 @@ desired effect
   <?php 
   $TabManagementPasar = 'active';
   include('menubar.php');?>
-
+ <?php
+    if( isset($_SESSION['err_message'])){
+      echo "<p class='alert alert-danger'>".$_SESSION['err_message']."</p>";
+      unset($_SESSION['err_message']);
+    }
+    if(!empty($_GET)){
+       $id = $_GET['id'];
+       $name = $_GET['name'];
+       $row = getRowPasarById($id);
+    }else{
+      header('Location: management-pasar.php');
+      die();
+    }
+  ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -125,21 +138,10 @@ desired effect
             <div class="box-header">
               <h3 class="box-title">Edit Pasar</h3>
               <hr>
+              <h4 style="font-weight:bold;"><?=$name?> </h4>
             </div>
             <div class="box-body">
-                 <?php
-                  if( isset($_SESSION['err_message'])){
-                    echo "<p class='alert alert-danger'>".$_SESSION['err_message']."</p>";
-                    unset($_SESSION['err_message']);
-                  }
-                  if(!empty($_GET)){
-                     $id = $_GET['id'];
-                     $row = getRowPasarById($id);
-                  }else{
-                    header('Location: management-pasar.php');
-                    die();
-                  }
-                ?>
+
                 <form action="edit_pasar.php?id=<?=$id?>"  method="POST" enctype="multipart/form-data">
                   <div class="form-group">
                               <label>Name</label>
