@@ -171,7 +171,7 @@ include('head.php');
 							<h4>Saufi Rahman</h4>
 							<h3>Back End Developer</h3>
 							<hr>
-						
+							<h3>1306382120</h3>
 						</div>
 				</div>
 			</div>
@@ -182,7 +182,7 @@ include('head.php');
 							<h4>Clara Indriyani</h4>
 							<h3>Back End Developer</h3>
 							<hr>
-							
+							<h3>1306381931</h3>							
 						</div>
 				</div>
 			</div>
@@ -193,11 +193,7 @@ include('head.php');
 							<h4>Intan Amalia Sari</h4>
 							<h3>Front End Developer</h3>
 							<hr>
-							<ul class="social-icon">
-								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
-								<li><a href="#" class="fa fa-twitter wow fadeIn" data-wow-delay="0.6s"></a></li>
-								<li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="0.9s"></a></li>
-							</ul>
+							<h3>1306463894</h3>
 						</div>
 				</div>
 			</div>
@@ -208,11 +204,7 @@ include('head.php');
 							<h4>Dewi Suci Rafianti</h4>
 							<h3>Front End Developer</h3>
 							<hr>
-							<ul class="social-icon">
-								<li><a href="#" class="fa fa-facebook wow fadeIn" data-wow-delay="0.3s"></a></li>
-								<li><a href="#" class="fa fa-twitter wow fadeIn" data-wow-delay="0.6s"></a></li>
-								<li><a href="#" class="fa fa-dribbble wow fadeIn" data-wow-delay="0.9s"></a></li>
-							</ul>
+							<h3>1306382796</h3>
 						</div>
 				</div>
 			</div>
