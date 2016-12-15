@@ -74,7 +74,7 @@ http://www.tooplate.com/view/2075-digital-team
 				<h1>Patrase</h1>
 				<hr>
 				<a href="#work" class="smoothScroll btn btn-danger">What we do</a>
-				<a href="home.php" class="smoothScroll btn btn-default">Try this apps</a>
+				<a href="discover.php" class="smoothScroll btn btn-default">Try this apps</a>
 			</div>
 		</div>
 	</div>		
@@ -92,45 +92,45 @@ http://www.tooplate.com/view/2075-digital-team
 				</div>
 			</div>
 			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
+				<a href="discover.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
-							<h3>Find Traditional Market Location</h3>
+							<h3>Discover Market Location</h3>
 							<hr>
-							<p>You can search any traditional markets here by the name.</p>
+							<p>You can discover any traditional markets.</p>
 					</div>
 				</a>
 			</div>
 
 			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
+				<a href="market-list.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
 							<h3>View List of Traditional Market</h3>
 							<hr>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+							<p>View list of market including its information. </p>
 					</div>
 				</a>
 			</div>
 
 			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
+				<a href="nearest.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
 							<h3>Find Nearest Traditional Market</h3>
 							<hr>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+							<p>Find nearest market from desired location.</p>
 					</div>
 				</a>
 			</div>
 
 			<div class="col-md-6">
-				<a href="home.php" style="color: #000">
+				<a href="route.php" style="color: #000">
 					<div class="col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="0.6s">
 						<i class="icon-cloud medium-icon"></i>
 							<h3>Route to A Market</h3>
 							<hr>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteu sunt in culpa qui officia.</p>
+							<p>Route to a market from your position.</p>
 					</div>
 				</a>
 			</div>
@@ -183,7 +183,7 @@ http://www.tooplate.com/view/2075-digital-team
 			</div>
 			<div class="col-md-3 col-sm-6 wow fadeIn" data-wow-delay="0.9s">
 				<div class="team-wrapper">
-					<img src="images/team1.jpg" class="img-responsive" alt="team img">
+					<img src="images/team1.jpg" class="img-responsive" alt="team img" style="size: ">
 						<div class="team-des">
 							<h4>Saufi Rahman</h4>
 							<h3>Back End Developer</h3>
