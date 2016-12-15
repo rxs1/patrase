@@ -340,28 +340,41 @@ work section
 market list section
 ========================================================================== */
 #market-list {
-  
+  background-image: url("../images/page-bg.jpg");
+  background-size: 100%;
 }
 #market-list .container{
   margin-top: 60px;
   padding: 28px;
+
 }
 #market-list .container .row .col-md-12 {
   margin-top: 20px;
   padding: 20px;
   position: relative;
   transition: all 0.4s ease-in-out;
+  background-color: #fff;
+  opacity: 0.98;
+  border-radius: 25px;
 }
 #market-list .container .row .col-md-12:hover {
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.20);
 }
+
+#market-list .container .row .col-md-8 {
+  background-color: #fff;
+  opacity:0.98;
+  border-radius: 25px;
+}
+
 #market-list h3 {
   font-size: 18px;
 }
 
 #market-list #list{
   min-height: 450px;
-  background-color:rgba(0,198,208, 0.3);
+  background-color: #fff;
+  opacity:0.98;
 }
 
 #market-list #list:hover{
@@ -394,7 +407,8 @@ market list section
 route section
 ========================================================================== */
 #route {
-  
+  background-image: url("../images/page-bg.jpg");
+  background-size: 100%;
 }
 #route .container{
   margin-top: 60px;
@@ -404,12 +418,21 @@ route section
   padding: 10px;
   position: relative;
   transition: all 0.4s ease-in-out;
+  background-color: #fff;
+  opacity: 0.98;
+  border-radius: 25px; 
 }
 #route .container .row .col-md-12:hover {
   box-shadow: 0px 2px 8px 0px rgba(50, 50, 50, 0.20);
 }
 #route h3 {
   font-size: 18px;
+}
+#route .container .row .col-md-8{
+  background-color: #fff;
+}
+#route .container .row .col-md-4{
+  background-color: #fff;
 }
 
 
