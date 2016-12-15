@@ -26,7 +26,7 @@
 		    $dataDescription["Type"]=$icon["type"];
 		    $dataDescription["Size"]= ($icon["size"]/1024) ." Kb";
 		    $dataDescription["Temp"]= $icon["tmp_name"];
-		    $dataDescription["NewName"]= "icon-".date("H-i-s").".".$extension;
+		    $dataDescription["NewName"]= "icon-".date("H:i:s").".".$extension;
 		    $IconNewName = $dataDescription['NewName'];
 		    $dataDescription["store_directory"] = "upload/icon_category/" . $dataDescription["NewName"];
 	        //checking if proses upload success

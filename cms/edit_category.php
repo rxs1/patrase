@@ -93,7 +93,7 @@ desired effect
                 $dataDescription["Type"]=$icon["type"];
                 $dataDescription["Size"]= ($icon["size"]/1024) ." Kb";
                 $dataDescription["Temp"]= $icon["tmp_name"];
-                $dataDescription["NewName"]= "icon-".date("H-i-s").".".$extension;
+                $dataDescription["NewName"]= "icon-".date("H:i:s").".".$extension;
                 $IconNewName = $dataDescription['NewName'];
                 $dataDescription["store_directory"] = "upload/icon_category/" . $dataDescription["NewName"];
                 if(move_uploaded_file($icon["tmp_name"], "upload/icon_category/" . $dataDescription["NewName"])){
@@ -132,7 +132,7 @@ desired effect
             $_SESSION['success_message'] = 'Succes Edit Data Category id = '.$id ;
             echo '
               <script type="text/javascript">
-              location.href = "crud-category.php?id=".$id;
+              location.href = "crud-category.php";
               </script>
             ';
 

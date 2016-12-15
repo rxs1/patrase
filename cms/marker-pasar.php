@@ -112,24 +112,6 @@ desired effect
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <?php
-      if( isset($_SESSION['success_message'])){
-        echo "<p class='alert alert-success'>".$_SESSION['success_message']."</p>";
-        unset($_SESSION['success_message']);
-      }
-
-      if( isset($_SESSION['err_message'])){
-        echo "<p class='alert alert-error'>".$_SESSION['err_message']."</p>";
-        unset($_SESSION['err_message']);
-      }
-      $id = $_GET['id'];
-      $name = $_GET['name'];
-      $query = "SELECT * FROM mst_location where id=$id";
-      $result = @mysql_query($query);
-      $row = mysql_fetch_array($result, MYSQL_ASSOC);
-
-
-    ?>
     <section class="content-header">
       <h1>
         Management Pasar
@@ -147,21 +129,35 @@ desired effect
             <div class="box-header">
               <h3 class="box-title">Marker Maps Pasar Tradisional</h3>
               <hr>
-              <h3 style="text-align:center; font-weight:bold;"><?=$name?> </h3>
+      
             </div>
         
             <!-- /.box-header -->
             <div class="box-body">
-                
+             
                 <div class="row">
                   <div class="container">
                     <div class="col-md-10 col-md-offset-1">
-                        <?php
-                          if(empty($row)){
-                            echo "<p class='alert alert-warning'>You Still not Define Marker for This 'Pasar'</p>";
-                          }
+                     <?php
+                        if( isset($_SESSION['success_message'])){
+                          echo "<p class='alert alert-success'>".$_SESSION['success_message']."</p>";
+                          unset($_SESSION['success_message']);
+                        }
 
-                        ?>
+                        if( isset($_SESSION['err_message'])){
+                          echo "<p class='alert alert-error'>".$_SESSION['err_message']."</p>";
+                          unset($_SESSION['err_message']);
+                        }
+                        $id = $_GET['id'];
+                        $query = "SELECT * FROM mst_location where id=$id";
+                        $result = @mysql_query($query);
+                        $row = mysql_fetch_array($result, MYSQL_ASSOC);
+
+                        if(empty($row)){
+                          echo "<p class='alert alert-warning'>You Still not Define Marker for This 'Pasar'</p>";
+                        }
+
+                      ?>
                      
                         <input id="pac-input" class="controls" type="text" placeholder="Search Box">
                         <div style="height: 350px;width: 100%"  id="map" ></div>

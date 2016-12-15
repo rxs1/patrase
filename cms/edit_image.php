@@ -112,32 +112,7 @@ desired effect
   <?php 
   $TabManagementPasar = 'active';
   include('menubar.php');?>
-  <?php
-              
-    if (!empty($_SESSION['success_message'])) {
-        echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
-        unset($_SESSION['success_message']);
-    }
 
-    if (!empty($_SESSION['deleted'])) {
-        echo '<div class="alert alert-danger">' . $_SESSION['deleted'] . '</div>';
-        unset($_SESSION['deleted']);
-    }
-
-    if (!empty($_SESSION['err_message'])) {
-        echo '<div class="alert alert-danger">' . $_SESSION['err_message'] . '</div>';
-        unset($_SESSION['err_message']);
-    }
-    
-    if(!empty($_GET)){
-       $id = $_GET['id'];
-       $name = $_GET['name'];
-       $row = getRowPasarById($id);
-    }else{
-      header('Location: management-pasar.php');
-      die();
-    }
-    ?>
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -157,10 +132,33 @@ desired effect
             <div class="box-header">
               <h3 class="box-title">Edit Gambar Pasar</h3>
               <hr>
-              <h4 style="font-weight:bold;"><?=$name?> </h4>
             </div>
             <div class="box-body">
-                 
+                 <?php
+                
+                  if (!empty($_SESSION['success_message'])) {
+                      echo '<div class="alert alert-success">' . $_SESSION['success_message'] . '</div>';
+                      unset($_SESSION['success_message']);
+                  }
+
+                  if (!empty($_SESSION['deleted'])) {
+                      echo '<div class="alert alert-danger">' . $_SESSION['deleted'] . '</div>';
+                      unset($_SESSION['deleted']);
+                  }
+
+                  if (!empty($_SESSION['err_message'])) {
+                      echo '<div class="alert alert-danger">' . $_SESSION['err_message'] . '</div>';
+                      unset($_SESSION['err_message']);
+                  }
+                  
+                  if(!empty($_GET)){
+                     $id = $_GET['id'];
+                     $row = getRowPasarById($id);
+                  }else{
+                    header('Location: management-pasar.php');
+                    die();
+                  }
+                ?>
                 <form action="edit_image.php?id=<?=$id?>"  method="POST" enctype="multipart/form-data">
                   <div class="form-group">
                       <label for="exampleInputFile">Upload Image</label>
