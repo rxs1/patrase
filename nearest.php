@@ -20,8 +20,9 @@ include('menubar.php');
             <hr>
             <br>
             <input type="text" readonly="readonly" id="start" style="width: 100%" class="form-control" placeholder="Drag marker if your still not define start location" >
-            <p class="alert alert-text" id="result"></p>
-            <center><button class="btn btn-primary"  id="find" ">Find Now</button></center>
+           
+            <center><p><button class="btn btn-primary"  id="find" ">Find Now</button></p></center>
+             <p class="col-md-12" id="result"> </p>
       </div>
        <div class="col-md-12 col-sm-12">
             <input id="pac-input" class="controls" type="text" placeholder="Search Box">
@@ -38,11 +39,13 @@ include('menubar.php');
 include('footer.php');
 ?>
 <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-CkwZplHgj3yDPctt_PKmaAR56SsGbd8&libraries=geometry,places">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC-CkwZplHgj3yDPctt_PKmaAR56SsGbd8&libraries=geometry,places&callback=initMap">
     </script>
  <script>
-$(document).ready(function(){
-	
+
+  function initMap(){
+
+
 
 		$.ajax({
                 type: "POST",
@@ -73,14 +76,15 @@ $(document).ready(function(){
       
             function init(){
                   var latlngs = [];
-                  var pos;
+                 
                   var map; 
                   var marker;
+                  var startPoint;
                   var marker1; 
                   var defaults = {lat: -6.22171915637258, lng: 106.85611756132812};    
                   
                   //map
-                    var bounds = new google.maps.LatLngBounds();
+                  var bounds = new google.maps.LatLngBounds();
                   var geocoder = new google.maps.Geocoder;
                     map = new google.maps.Map(document.getElementById('map'), {
                       center: defaults,
@@ -105,14 +109,15 @@ $(document).ready(function(){
                       });
 
                       marker.addListener('drag', function () {
-                        start = marker.getPosition();
+                        startPoint = marker.getPosition();
                       });
 
                       google.maps.event.addListener(marker, 'dragend', function() {
                         handleLocationName(geocoder, startPoint);
                       });
                       
-                     
+                      infoWindow.setPosition(startPoint);
+                      infoWindow.setContent('Location found.');
                       map.setCenter(startPoint);
 
                      start = new google.maps.LatLng(startPoint); 
@@ -124,9 +129,8 @@ $(document).ready(function(){
                       handleLocationError(true, infoWindow, map.getCenter());
                     });
                   } else {
-
                     // Browser doesn't support Geolocation
-                    handleLocationError(false, infoWindow, map.getCenter());
+                    handleLocationError(false, infoWindow, defaults);
                   }
 
                     
@@ -136,8 +140,9 @@ $(document).ready(function(){
                   map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
                   map.addListener('bounds_changed', function () {
                       searchBox.setBounds(map.getBounds());
-                      pos = marker.getPosition();
-                     
+                      startPoint = marker.getPosition();
+                      infoWindow.setPosition(startPoint);
+                      infoWindow.setContent('Location found.');
                      
                       
                   });
@@ -147,7 +152,6 @@ $(document).ready(function(){
                       if (places.length == 0) {
                           return;
                       }
-
                               // For each place, get the icon, name and location.
                             var bounds = new google.maps.LatLngBounds();
                               places.forEach(function (place) {
@@ -171,10 +175,9 @@ $(document).ready(function(){
 
                   function findNearest(){
                      //find nearest
+
                      latlngs =[];
-                     if(marker1 != null){
-                        alert('masuk');
-                     }
+                   
                       for (var j = 0; j < locations.length; j++) {
 
                           codeAddress(locations[j]);
@@ -196,13 +199,13 @@ $(document).ready(function(){
                   function compareDistances(loc){   
                    var bounds = new google.maps.LatLngBounds();        
                     latlngs.push(loc);//add markers to the latlngs array
-                     alert(latlngs.length+'|'+locations.length); 
+                  
                     //when the markers array length matches the locations array length...
                     if (latlngs.length == locations.length){
                         var distances = [];
                         //use geometry.spherical to calculate the distances between pairs of lat/lng coordinates
                         for(var j = 0; j < latlngs.length; j++){
-                            distances.push({distance:google.maps.geometry.spherical.computeDistanceBetween(start, latlngs[j]), marker: j});
+                            distances.push({distance:google.maps.geometry.spherical.computeDistanceBetween(startPoint, latlngs[j]), marker: j});
                         }
 
                         //reorder the distances, shortest first, closest will then be distances[0] and distances[1]
@@ -245,25 +248,24 @@ $(document).ready(function(){
                     }
 
                     function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-                       marker = new google.maps.Marker({
-                        position: defaults,
-                        map: map,
-                        draggable: true
-                      });
-
-                      marker.addListener('drag', function () {
-                        pos = marker.getPosition();
-                      });
+                      $('#result').append( "<p class=' alert alert-warning'>Please refresh or active your gps and then refresh, [gps error]</p>");
 
                       infoWindow.setPosition(pos);
                       infoWindow.setContent(browserHasGeolocation ?
+
+
                                             'Error: The Geolocation service failed.' :
                                             'Error: Your browser doesn\'t support geolocation.');
                     }
 
 
                 }
-});
+
+      
+
+
+
+}
 
     </script>
 </body>
